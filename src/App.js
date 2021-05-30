@@ -1,10 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import NavBar from './Components/NavBar/NavBar';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
     <div className="App">
+      
       <header className="App-header">
+        <NavBar />
         <p>PUERTO MERAKI</p>
         <p style={{color: "#c79ad5"}}>Bienvenidos!</p>
         <img src={logo} className="App-logo" alt="logo" />
@@ -19,7 +23,15 @@ function App() {
         >
           Learn React
         </a>
+        
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, placeat eveniet aliquam minus qui debitis, perferendis optio, facilis atque dignissimos molestiae cumque iste impedit doloribus pariatur modi necessitatibus laborum consectetur.</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, placeat eveniet aliquam minus qui debitis, perferendis optio, facilis atque dignissimos molestiae cumque iste impedit doloribus pariatur modi necessitatibus laborum consectetur.</p>
       </header>
+
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
