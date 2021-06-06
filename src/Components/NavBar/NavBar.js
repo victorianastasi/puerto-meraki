@@ -1,5 +1,6 @@
 import './NavBar.css';
 import logopm from '../../assets/images/logo-pm.png';
+import CartWidget from './CartWidget';
 
 const NavBar = () => {
     return (
@@ -16,6 +17,7 @@ const NavBar = () => {
                     <a className="nav-item nav-link" href="../../../../public/index.html">Productos</a>
                     <a className="nav-item nav-link" href="../../../../public/index.html">Como comprar</a>
                     <a className="nav-item nav-link" href="../../../../public/index.html">Contacto</a>
+                    <CartWidget />
                 </div>
             </div>
         </nav>

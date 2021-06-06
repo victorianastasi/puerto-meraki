@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import NavBar from './Components/NavBar/NavBar';
 import Footer from './Components/Footer/Footer';
+import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 
 function App() {
   return (
@@ -9,8 +10,8 @@ function App() {
       
       <header className="App-header">
         <NavBar />
-        <p>PUERTO MERAKI</p>
-        <p style={{color: "#c79ad5"}}>Bienvenidos!</p>
+        <ItemListContainer greeting="Bienvenidos a Puerto Meraki" />
+        
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
