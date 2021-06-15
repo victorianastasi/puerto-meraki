@@ -13,7 +13,7 @@ const ItemCount = ({initial, stock, onAdd}) => {
         items > initial ? setItems(items - 1) : alert("La cantidad no puede ser menor a 1");
     }
     return (
-        <div className="product-card">
+        <div className="product-card-unique">
             <img src={producto} className="prod-img" alt="Cuadro Calado"/>
             <p className="prod-title">Cuadro Calado</p>
             <div className="prod-amount">

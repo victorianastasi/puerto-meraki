@@ -1,9 +1,10 @@
-.product-card-unique{
+.product-card{
     width: 18rem;
     background-color: aliceblue;
-    margin: 0 auto;
+    margin: 1.5rem;
     color: rgb(40, 44, 52);
     padding-bottom: 1.5rem;
+    font-size: 1rem;
 }
 .prod-img{
     width: inherit;
@@ -12,12 +13,14 @@
     font-family: 'Amatic SC', cursive;
     font-size: 2rem;
     margin: 0.75rem 0rem;
+    color: rgb(150, 63, 193);
 }
-.prod-amount{
-    margin-bottom: 0.75rem;
+.prod-price{
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.7rem;
+    margin: 0.75rem 0rem;
 }
-.amount{
-    font-family: 'Nunito', sans-serif;
-    font-size: 1rem;
-    padding: 0 1rem;
+.prod-id{
+    font-size: 0.9rem;
+    margin: 0.2rem 0rem;
 }
