@@ -1,8 +1,8 @@
 [
-    { "id": 1, "title": "Cuadro Calado - Perrito", "price": 100, "pictureUrl": "./images/pic1.jpg" },
-    { "id": 2, "title": "Cuadro Calado - Hojas", "price": 100, "pictureUrl": "./images/pic2.jpg" },
-    { "id": 3, "title": "Cuadro Calado - Colibrí", "price": 100, "pictureUrl": "./images/pic3.jpg" },
-    { "id": 4, "title": "Cuadro Calado - Mundo", "price": 100, "pictureUrl": "./images/pic4.jpg" },
-    { "id": 5, "title": "Cuadro Calado - Guitarras", "price": 100, "pictureUrl": "./images/pic5.jpg" },
-    { "id": 6, "title": "Cuadro Calado - Música", "price": 100, "pictureUrl": "./images/pic6.jpg" }
+    { "id": 1, "title": "Cuadro Calado - Perrito", "price": 100, "pictureUrl": "img-products/pic1.jpg" },
+    { "id": 2, "title": "Cuadro Calado - Hojas", "price": 100, "pictureUrl": "img-products/pic2.jpg" },
+    { "id": 3, "title": "Cuadro Calado - Colibrí", "price": 100, "pictureUrl": "img-products/pic3.jpg" },
+    { "id": 4, "title": "Cuadro Calado - Mundo", "price": 100, "pictureUrl": "img-products/pic4.jpg" },
+    { "id": 5, "title": "Cuadro Calado - Guitarras", "price": 100, "pictureUrl": "img-products/pic5.jpg" },
+    { "id": 6, "title": "Cuadro Calado - Música", "price": 100, "pictureUrl": "img-products/pic6.jpg" }
 ]
