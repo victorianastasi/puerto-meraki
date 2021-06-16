@@ -1,0 +1,36 @@
+.item-detail{
+    width: 80%;
+    background-color: rgb(245, 245, 245);
+    margin: 2.5rem auto;
+    padding: 3rem 1rem;
+    color: rgb(40, 44, 52);
+    font-size: 1rem;
+    display: flex;
+    flex-basis: row wrap;
+
+}
+.item-detail-img{
+    width: 60%;
+    display: inline-block;
+    margin: auto;
+}
+.item-detail-picture{
+    width: 100%;
+    display: inline-block;
+}
+.item-detail-text{
+    width: 40%;
+    display: inline-block;
+    padding: 0 1.5rem;
+    margin: auto 0;
+    
+}
+.item-detail-title{
+    font-family: 'Amatic SC', cursive;
+    font-size: 2rem;
+    margin: 0.75rem 0rem;
+    color: rgb(7, 197, 194);
+}
+.item-detail-id{
+    font-size: 0.9rem;
+}

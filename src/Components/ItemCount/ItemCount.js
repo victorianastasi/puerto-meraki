@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { BsFillPlusCircleFill } from 'react-icons/bs';
 import { BsFillDashCircleFill } from 'react-icons/bs';
-import producto from '../../assets/images/prod-4.jpg';
 import './ItemCount.css';
 
 const ItemCount = ({initial, stock, onAdd}) => {
@@ -14,8 +13,6 @@ const ItemCount = ({initial, stock, onAdd}) => {
     }
     return (
         <div className="product-card-unique">
-            <img src={producto} className="prod-img" alt="Cuadro Calado"/>
-            <p className="prod-title">Cuadro Calado</p>
             <div className="prod-amount">
                 <BsFillDashCircleFill className="counter-button" onClick={removeItem}/>
                 <span className="amount">Cantidad: {items}</span>
