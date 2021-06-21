@@ -1,9 +1,10 @@
 .footer-data{
-    background-color: rgb(248, 249, 250);
+    background-color: rgb(245, 245, 245);
     font-family: 'Nanum Brush Script', cursive;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     color: rgb(40, 44, 52);
+    text-align: center;
 }
 .footer-title{
     font-family: 'Nanum Brush Script', cursive;

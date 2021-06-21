@@ -1,9 +1,10 @@
 .product-card{
     width: 18rem;
-    background-color: aliceblue;
+    background-color: rgb(245, 245, 245);
     margin: 1.5rem;
     color: rgb(40, 44, 52);
     font-size: 1rem;
+    padding-bottom: 2rem;
 }
 .prod-img{
     width: inherit;
@@ -14,12 +15,14 @@
     margin: 0.75rem 0rem;
     color: rgb(150, 63, 193);
 }
-.prod-price{
-    font-family: 'Amatic SC', cursive;
-    font-size: 1.7rem;
-    margin: 0.75rem 0rem;
+.details-item-button{
+    font-weight: 600;
+    background-color: rgb(199, 154, 213);
+    border: none;
+    color: rgb(40, 44, 52);
+    width: 200px;
 }
-.prod-id{
-    font-size: 0.9rem;
-    margin: 0.2rem 0rem;
+.details-item-button:hover{
+    background-color: rgb(150, 63, 193);
+    color: white;
 }

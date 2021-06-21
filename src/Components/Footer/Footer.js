@@ -7,7 +7,7 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <div className="container-fluid footer-data">
+        <footer className="container-fluid footer-data">
             <p className="footer-title">Puerto Meraki</p>
             <p className="footer-text"><FaWhatsapp /> 15-2222-5555 - ejemplo@mail.com</p>
             <div className="footer-media-container">
@@ -16,7 +16,7 @@ const Footer = () => {
                 <a href="mailto:ejemplo@mail.com" target="blank" title="Email" className="footer-icon icon-mail"><FaRegEnvelope className="icon" /></a>
             </div>
             <p className="footer-copyright"> <MdCopyright /> Copyright 2021 - Puerto Meraki</p>
-        </div>
+        </footer>
     );  
 };
 

@@ -3,25 +3,25 @@ import NavBar from './Components/NavBar/NavBar';
 import Footer from './Components/Footer/Footer';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      
-      <header className="App-header">
-        <NavBar />
-        <ItemListContainer greeting="Bienvenidos a Puerto Meraki" />
-        <ItemDetailContainer />
-        
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, placeat eveniet aliquam minus qui debitis, perferendis optio, facilis atque dignissimos molestiae cumque iste impedit doloribus pariatur modi necessitatibus laborum consectetur.</p>
-
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, placeat eveniet aliquam minus qui debitis, perferendis optio, facilis atque dignissimos molestiae cumque iste impedit doloribus pariatur modi necessitatibus laborum consectetur.</p>
-      </header>
-
-      <footer>
-        <Footer />
-      </footer>
-    </div>
+    <BrowserRouter >
+      <NavBar />
+      <Switch>
+        <Route exact path="/">
+          <ItemListContainer greeting="Bienvenidos a Puerto Meraki"/>
+        </Route>
+        <Route exact path="/category/:categoryId">
+          <ItemListContainer greeting="Bienvenidos a Puerto Meraki"/>
+        </Route>
+        <Route exact path="/item/:id">
+          <ItemDetailContainer />
+        </Route>
+      </Switch>
+      <Footer />
+    </BrowserRouter>
   );
 }
 

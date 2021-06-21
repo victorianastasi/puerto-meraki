@@ -4,7 +4,7 @@
 .title-products{
     font-family: 'Amatic SC', cursive;
     font-size: 3rem;
-    margin: 0.75rem 0rem;
+    padding: 0.75rem 0rem;
     color: rgb(65, 235, 206);
     font-weight: 800;
 }

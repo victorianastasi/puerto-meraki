@@ -9,19 +9,18 @@ const ItemDetailContainer = () => {
    
     const getItems = () => {
         new Promise((result, reject) => {
-            console.log('esperar 3 segundos');
-          setTimeout(() => {
-            result(products);
-          }, 3000);
+            console.log('esperar 500ms');
+            setTimeout(() => {
+                result(products);
+            }, 500);
         }).then((response) => setItems(response));
     }
     
     return (
-        <div className="container-fluid">
-        {
-            getItems()
-        }
-            <ItemDetail itemsProducts={itemsProducts}/>
+        <div className="container-fluid body-bg">
+        {getItems()}
+            <h3 className="details-title">Detalles del Producto</h3>
+            <ItemDetail itemsProducts={itemsProducts} />
         </div>
     )
 }

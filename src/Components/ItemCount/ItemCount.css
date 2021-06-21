@@ -1,6 +1,6 @@
 .product-card-unique{
     width: 18rem;
-    background-color: aliceblue;
+    background-color: rgb(245, 245, 245);
     margin: 0 auto;
     color: rgb(40, 44, 52);
     padding-bottom: 1.5rem;
@@ -20,4 +20,11 @@
     font-family: 'Nunito', sans-serif;
     font-size: 1rem;
     padding: 0 1rem;
+}
+.counter-button{
+    font-size: 24px;
+}
+.counter-button:hover{
+    color: rgb(199, 154, 213);
+    transition: all 0.2s;
 }

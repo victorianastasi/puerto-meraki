@@ -9,16 +9,16 @@ const ItemListContainer = ({greeting}) => {
 
     useEffect(() => {
         new Promise((result, reject) => {
-            console.log('esperar 2 segundos');
-          setTimeout(() => {
-            result(products);
-          }, 2000);
+            console.log('esperar 1 segundo');
+            setTimeout(() => {
+                result(products);
+            }, 1000);
         }).then((response) => setItems(response));
     }, []);
 
     return (
-        <div className="container-fluid">
-            <h3 className="item-list-title">{greeting}</h3>
+        <div className="container-fluid body-bg">
+            <h3 className="greeting-title">{greeting}</h3>
             <ItemList items={items}/>
         </div>
     )

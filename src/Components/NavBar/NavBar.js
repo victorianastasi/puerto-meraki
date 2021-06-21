@@ -1,23 +1,32 @@
+import React from 'react';
 import './NavBar.css';
 import logopm from '../../assets/images/logo-pm.png';
 import CartWidget from './CartWidget';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
     return (
         <nav className="container-fluid navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="../../../../public/index.html">
+            <NavLink className="navbar-brand" exact to={'/'}>
                 <img src={logopm} className="logo-pm" alt="logo" />
-            </a>
+            </NavLink>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
-                    <a className="nav-item nav-link" href="../../../../public/index.html">Quienes Somos</a>
-                    <a className="nav-item nav-link" href="../../../../public/index.html">Productos</a>
-                    <a className="nav-item nav-link" href="../../../../public/index.html">Como comprar</a>
-                    <a className="nav-item nav-link" href="../../../../public/index.html">Contacto</a>
-                    <CartWidget />
+                    <NavLink className="nav-item nav-link" activeClassName="selected" to={`/category/naturaleza`}>
+                        Naturaleza
+                    </NavLink>
+                    <NavLink className="nav-item nav-link" activeClassName="selected" to={`/category/animales`}>
+                        Animales
+                    </NavLink>
+                    <NavLink className="nav-item nav-link" activeClassName="selected" to={`/category/musica`}>
+                        Música
+                    </NavLink>
+                    <NavLink activeClassName="selected" className="nav-item nav-link" to={'/cart'}>
+                        <CartWidget />
+                    </NavLink>
                 </div>
             </div>
         </nav>
