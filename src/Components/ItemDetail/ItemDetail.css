@@ -6,8 +6,7 @@
     color: rgb(40, 44, 52);
     font-size: 1rem;
     display: flex;
-    flex-basis: row wrap;
-
+    flex-flow: row wrap;
 }
 .item-detail-img{
     width: 60%;
@@ -31,6 +30,16 @@
     margin: 0.75rem 0rem;
     color: rgb(7, 197, 194);
 }
-.item-detail-id{
-    font-size: 0.9rem;
+@media screen and (max-width: 576px){
+    .item-detail{
+        width: 100%;
+        padding: 2rem 1rem;
+        margin: 1rem auto;
+    }
+    .item-detail-img{
+        width: 100%;
+    }
+    .item-detail-text{
+        width: 100%;
+    }
 }

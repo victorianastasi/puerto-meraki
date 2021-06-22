@@ -1,10 +1,11 @@
 import React from 'react';
 import './ItemDetail.css';
 import { useParams } from 'react-router-dom';
+import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ( { itemsProducts } ) => {
     const { id } = useParams();
-    
+
     return (
         <div>
         {itemsProducts.filter(item => item.id === Number(id)).map((item)=>(
@@ -15,8 +16,7 @@ const ItemDetail = ( { itemsProducts } ) => {
                 <div className="item-detail-text">
                     <p className="item-detail-title">{item.title}</p>
                     <p className="item-detail-description">Descripción: {item.description}</p>
-                    <p className="item-detail-price">Precio: $ {item.price}</p>
-                    <p className="item-detail-id">Id: #{item.id}</p>
+                    <ItemCount initial={1} stock={item.stock} itemTitle={item.title} itemImg={item.pictureUrl} itemPrice={item.price}/>
                 </div>
             </div>
         ))}

@@ -10,8 +10,8 @@ const ItemList = ({ items }) => {
     return (
       <div>
         <h2 className= "title-products"> Nuestros Productos</h2>
-        {items.map((item, index) => (
-            <div key={index} className="products">
+        {items.map((item) => (
+            <div key={item.id} className="products">
               <Item item={item} />
             </div>
         ))}
@@ -21,8 +21,8 @@ const ItemList = ({ items }) => {
     return (
       <div>
         <h2 className= "title-products"> Nuestros Productos</h2>
-        {items.filter(item => item.category === categoryId).map((item, index) => (
-            <div key={index} className="products">
+        {items.filter(item => item.category === categoryId).map((item) => (
+            <div key={item.id} className="products">
               <Item item={item} />
             </div>
         ))}

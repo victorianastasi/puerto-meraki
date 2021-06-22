@@ -1,0 +1,9 @@
+.cart-title{
+    font-family: 'Amatic SC', cursive;
+    font-size: 3.5rem;
+    text-shadow: 5px 5px 10px rgba(199, 154, 213, 0.5);
+    padding: 2rem 0;
+}
+.cart-text{
+    height: 350px;
+}

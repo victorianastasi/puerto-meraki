@@ -1,17 +1,8 @@
 .product-card-unique{
-    width: 18rem;
     background-color: rgb(245, 245, 245);
     margin: 0 auto;
     color: rgb(40, 44, 52);
-    padding-bottom: 1.5rem;
-}
-.prod-img{
-    width: inherit;
-}
-.prod-title{
-    font-family: 'Amatic SC', cursive;
-    font-size: 2rem;
-    margin: 0.75rem 0rem;
+    padding-bottom: 1rem;
 }
 .prod-amount{
     margin-bottom: 0.75rem;
