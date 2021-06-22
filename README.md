@@ -1,10 +1,10 @@
-# Getting Started with Create React App
+# Puerto Meraki
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto se trata del emprendimiento Puerto Meraki, el cual se dedica a la venta de cuadros decorativos.
 
-## Available Scripts
+## Demo
 
-In the project directory, you can run:
+![Puerto Meraki Demo](demo/react-puerto-meraki.gif)
 
 ### `npm start`
 
