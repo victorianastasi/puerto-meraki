@@ -1,26 +1,30 @@
 import React from 'react';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './ItemDetailContainer.css';
 import ItemDetail from '../ItemDetail/ItemDetail.js';
 import products from '../../assets/products.json';
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
-    const [itemsProducts, setItems] = useState([]);
-   
-    const getItems = () => {
-        new Promise((result, reject) => {
-            console.log('esperar 500ms');
-            setTimeout(() => {
-                result(products);
-            }, 500);
-        }).then((response) => setItems(response));
-    }
+    const [item, setItems] = useState({});
     
+    let { id } = useParams();
+
+    const [ product ] = products.filter( item => item.id === Number(id));
+
+    useEffect(() => {
+        new Promise((resolve, reject) => {
+            console.log("esperar 0.5 segundo")
+            setTimeout(() => {
+                resolve(product);
+            }, 500);
+        }).then((result) => setItems(result))
+    }, [product]);
+
     return (
         <div className="container-fluid body-bg">
-        {getItems()}
             <h3 className="details-title">Detalles del Producto</h3>
-            <ItemDetail itemsProducts={itemsProducts} />
+            <ItemDetail item={item} />
         </div>
     )
 }
