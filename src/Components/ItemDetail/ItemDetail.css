@@ -30,6 +30,14 @@
     margin: 0.75rem 0rem;
     color: rgb(7, 197, 194);
 }
+.endText{
+    color: blueviolet;
+    margin-bottom: 0;
+}
+.endButton{
+    background-color: blueviolet;
+    border-color: blueviolet;
+}
 @media screen and (max-width: 576px){
     .item-detail{
         width: 100%;

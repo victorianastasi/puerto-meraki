@@ -2,7 +2,6 @@
     background-color: rgb(245, 245, 245);
     margin: 0 auto;
     color: rgb(40, 44, 52);
-    padding-bottom: 1rem;
 }
 .prod-amount{
     margin-bottom: 0.75rem;
@@ -18,4 +17,7 @@
 .counter-button:hover{
     color: rgb(199, 154, 213);
     transition: all 0.2s;
+}
+.price{
+    margin: 1rem 0;
 }
