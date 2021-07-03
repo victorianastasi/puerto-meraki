@@ -11,7 +11,7 @@ export const CartProvider = ({ defaultValue = [], children }) => {
     };
 
     const removeItem = (itemId) => {
-        setCart(cart.filter((re) => re.item.id !== itemId));
+        setCart(cart.filter((x) => x.item.id !== itemId));
     };
   
     const clear = () => {
@@ -19,7 +19,7 @@ export const CartProvider = ({ defaultValue = [], children }) => {
     };
     
     const isInCart = (id) => {
-        const productItem = cart.find((re) => re.item.id === id);
+        const productItem = cart.find((x) => x.item.id === id);
         if (productItem) {
             return true;
         } else {

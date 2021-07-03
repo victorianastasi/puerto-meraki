@@ -8,7 +8,7 @@ const CartWidget = () => {
     let quantityWidgetItems = 0;
   
     for (let i = 0; i < cart.length; i++) {
-        quantityWidgetItems = quantityWidgetItems + cart[i].quantity;
+        quantityWidgetItems += cart[i].quantity;
     }
 
     return (

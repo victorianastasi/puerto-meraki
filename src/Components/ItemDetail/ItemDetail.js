@@ -9,30 +9,42 @@ const ItemDetail = ( { item, count, updateStock } ) => {
 
     const initial = 0;
     
-    const [showFinishShop, setShowFinishShop] = useState(true);
-    
     const [finalCount, setFinalCount] = useState(count);
 
-    const [MsgShop, setMsgShop] = useState(false);
+    const [MsgAddSuccess, setMsgAddSuccess] = useState(false);
+    
+    const [EndShop, setEndShop] = useState(false);
 
-    const endShop = () => {
-        if (showFinishShop){
-            return(
-                <div>
-                    <ItemCount initial={initial} stock={item.stock} onAdd={addCart} price={item.price} />
-                </div>
-            ); 
-        }else{
+    const checkShop = () => {
+        if((isInCart(item.id) && EndShop) || (isInCart(item.id)===false && EndShop)){
             return(
                 <div>
                     <p className="endText">Cantidad: {finalCount} - Precio total: $ {finalCount*item.price}</p>
                     <Link className="btn btn-primary endButton mt-2" to={'/cart'} >FINALIZAR COMPRA</Link>
-                    {MsgShop ? <div className="msg"><p className="msg-shop">Agregaste {finalCount} unidades del {item.title}</p> </div> : null}
+                    {MsgAddSuccess ? <div className="msg"><p className="msg-shop">Agregaste {finalCount} unidades del {item.title}</p> </div> : null}
                 </div>
             ); 
+        }else{
+            if(isInCart(item.id) ===true && EndShop === false){
+                return(
+                    <div className="check-cart">
+                        <p className="check-cart-text">El producto {item.title} ya se encuentra en el Carrito de compras</p>
+                        <Link className="btn btn-check-cart mt-2" to={'/'} >Ver otros Productos</Link>
+                    </div>
+                );
+            }else{
+                if(EndShop === false){
+                    return(
+                        <div>
+                            <ItemCount initial={initial} stock={item.stock} onAdd={addCart} price={item.price} />
+                        </div>
+                    ); 
+                }
+            }
         }
+            
     }
-     
+    
     const addCart = (count) => {
         if (updateStock < count){
             alert("No hay stock para la cantidad que quieres añadir");
@@ -43,10 +55,10 @@ const ItemDetail = ( { item, count, updateStock } ) => {
                 if(isInCart(item.id)){
                     alert(`El producto ${item.title} ya se encuentra en el Carrito de Compras`);
                 }else{
-                    setShowFinishShop(false);
                     setFinalCount(count);
                     addItem(item, count);
-                    setMsgShop(true);
+                    setMsgAddSuccess(true);
+                    setEndShop(true);
                 }
             }  
         }
@@ -62,7 +74,7 @@ const ItemDetail = ( { item, count, updateStock } ) => {
                     <p className="item-detail-title">{item.title}</p>
                     <p className="item-detail-description">Descripción: {item.description}</p>
                     <p>Precio por unidad: $ {item.price}</p>
-                    {endShop()}
+                    {checkShop()}
                 </div>
             </div>
         </div>
