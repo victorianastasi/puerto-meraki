@@ -18,6 +18,9 @@
 .cart-empty-button{
     font-family: 'Amatic SC', cursive;
     font-size: 2rem;
+    background-color: rgba(40, 44, 52, 0.8);
+    border: none;
+    padding: 0.5rem 2rem;
 }
 .cart-total{
     font-family: 'Amatic SC', cursive;
@@ -30,6 +33,21 @@
     justify-content: center;
 }
 .btn-shop{
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+    font-weight: 600;
     margin: 0 1rem;
+    width: 220px;
+    font-weight: 600;
+}
+@media screen and (max-width: 576px){
+    .btn-shop{
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin: 0.5rem 1rem;
+        width: 220px;
+        font-weight: 600;
+    }
+    .cart-empty-text{
+        font-size: 2rem;
+    }
 }

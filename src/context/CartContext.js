@@ -9,30 +9,26 @@ export const CartProvider = ({ defaultValue = [], children }) => {
         setCart([...cart, { item, quantity }]);
         console.log("Item:", item, "Quantity:", quantity);
     };
-    console.log(cart)
 
     const removeItem = (itemId) => {
-        console.log(itemId);
         setCart(cart.filter((re) => re.item.id !== itemId));
     };
   
     const clear = () => {
-        console.log("Vaciar el carrito");
         setCart([]);
     };
-  
+    
     const isInCart = (id) => {
-        console.log(id);
-        const productItem = cart.find((item) => item.id === id);
+        const productItem = cart.find((re) => re.item.id === id);
         if (productItem) {
             return true;
         } else {
             return false;
         }
     };
-  
+
     return (
-      <CartContext.Provider value={{ cart, addItem, removeItem, clear, isInCart }}>
+      <CartContext.Provider value={{ cart, addItem, removeItem, clear, isInCart}}>
         {children}
       </CartContext.Provider>
     );

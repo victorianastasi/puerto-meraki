@@ -5,7 +5,36 @@
     font-weight: 600;
     font-size: 1.2rem;
     margin: 2rem 0;
+    padding: 1rem 3rem;
 }
 .cart-item-image{
     width: inherit;
+}
+.item-cart-text{
+    margin: 0;
+}
+.btn-remove{
+    background-color: rgb(189, 53, 24);
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    width: 80%;
+    color: white;
+}
+.btn-remove:hover{
+    background-color: rgb(139, 40, 18);
+    color: white;
+}
+@media screen and (max-width: 576px){
+    .row-item{
+        font-weight: 500;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        padding: 1rem 1rem;
+    }
+    .btn-remove{
+        font-size: 1.1rem;
+        font-weight: 500;
+        width: 50%;
+    }
 }

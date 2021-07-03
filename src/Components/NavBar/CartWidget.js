@@ -5,14 +5,15 @@ import { CartContext } from "../../context/CartContext";
 
 const CartWidget = () => {
     const { cart } = useContext(CartContext);
-    let quantityItems = 0;
+    let quantityWidgetItems = 0;
   
     for (let i = 0; i < cart.length; i++) {
-        quantityItems = quantityItems + cart[i].quantity;
+        quantityWidgetItems = quantityWidgetItems + cart[i].quantity;
     }
+
     return (
         <div>
-        <span className="quantity-widget">∙ {quantityItems} ∙</span>
+            {quantityWidgetItems === 0 ? null : <span className="quantity-widget">∙ {quantityWidgetItems} ∙</span>}
             <MdShoppingCart />
         </div>
     );  

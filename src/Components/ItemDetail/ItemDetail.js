@@ -5,19 +5,21 @@ import { Link } from 'react-router-dom';
 import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ( { item, count, updateStock } ) => {
-    const {addItem} = useContext(CartContext);
+    const {addItem, isInCart} = useContext(CartContext);
 
     const initial = 0;
     
-    const [show, setShow] = useState(true);
+    const [showFinishShop, setShowFinishShop] = useState(true);
     
     const [finalCount, setFinalCount] = useState(count);
 
+    const [MsgShop, setMsgShop] = useState(false);
+
     const endShop = () => {
-        if (show){
+        if (showFinishShop){
             return(
                 <div>
-                    <ItemCount initial={initial} stock={item.stock} onAdd={addCart} price={item.price}/>
+                    <ItemCount initial={initial} stock={item.stock} onAdd={addCart} price={item.price} />
                 </div>
             ); 
         }else{
@@ -25,27 +27,31 @@ const ItemDetail = ( { item, count, updateStock } ) => {
                 <div>
                     <p className="endText">Cantidad: {finalCount} - Precio total: $ {finalCount*item.price}</p>
                     <Link className="btn btn-primary endButton mt-2" to={'/cart'} >FINALIZAR COMPRA</Link>
+                    {MsgShop ? <div className="msg"><p className="msg-shop">Agregaste {finalCount} unidades del {item.title}</p> </div> : null}
                 </div>
             ); 
         }
     }
-
+     
     const addCart = (count) => {
         if (updateStock < count){
-            console.log("No hay stock para la cantidad que quieres añadir");
+            alert("No hay stock para la cantidad que quieres añadir");
         }else{
             if(count === 0){
-                alert("La cantidad debe ser mayor a 0")
-            }else {
-                setShow(false);
-                setFinalCount(count);
-                addItem(item, count);
-                alert(`Agregaste ${count} unidades de ${item.title}`);
-            }      
+                alert("La cantidad debe ser mayor a 0");
+            }else{
+                if(isInCart(item.id)){
+                    alert(`El producto ${item.title} ya se encuentra en el Carrito de Compras`);
+                }else{
+                    setShowFinishShop(false);
+                    setFinalCount(count);
+                    addItem(item, count);
+                    setMsgShop(true);
+                }
+            }  
         }
     };
-    
- 
+
     return (
         <div>
             <div key={item.id} className="item-detail">
