@@ -11,9 +11,17 @@
     padding: 2rem 0;
 }
 .loading{
-    margin: 3rem auto 9rem auto;
-    color: rgb(199, 154, 213);
-    width: 60px;
-    height: 60px;
-    border-width: 7px;
+    margin: 7rem auto 0 auto;
+    display: block;
+    height: 450px;
+    color: rgb(164, 230, 219);
+}
+@media screen and (max-width: 576px){
+    .greeting-title{
+        font-size: 3rem;
+        padding-bottom: 0;
+    }
+    .loading{
+        margin: 4rem auto 0 auto;
+    }
 }

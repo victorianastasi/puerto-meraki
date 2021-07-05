@@ -26,3 +26,8 @@
     background-color: rgb(150, 63, 193);
     color: white;
 }
+@media screen and (max-width: 576px){
+    .product-card{
+        margin: 1rem auto;
+    }
+}

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import './ItemListContainer.css';
 import ItemList from '../ItemList/ItemList.js';
 import products from '../../assets/products.json';
+import BeatLoader from "react-spinners/BeatLoader";
 
 const ItemListContainer = ({greeting}) => {
     const [items, setItems] = useState([]);
@@ -15,7 +16,7 @@ const ItemListContainer = ({greeting}) => {
             console.log('esperar 1 segundo');
             setTimeout(() => {
                 result(products);
-            }, 1000);
+            }, 1500);
         }).then((response) => setItems(response));
     }, []);
 
@@ -27,7 +28,7 @@ const ItemListContainer = ({greeting}) => {
         <div className="container-fluid body-bg">
             <h3 className="greeting-title">{greeting}</h3>
             <ItemList items={items}/>
-            {loading ? <div className="spinner-border loading"></div> : null }
+            {loading ? <div className="loading"><BeatLoader color={"rgb(65, 235, 206)"} loading={loading} size={30} /></div> : null }
         </div>
     )
 }

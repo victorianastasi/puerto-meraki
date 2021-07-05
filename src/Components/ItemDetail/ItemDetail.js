@@ -21,7 +21,7 @@ const ItemDetail = ( { item, count, updateStock } ) => {
                 <div>
                     <p className="endText">Cantidad: {finalCount} - Precio total: $ {finalCount*item.price}</p>
                     <Link className="btn btn-primary endButton mt-2" to={'/cart'} >FINALIZAR COMPRA</Link>
-                    {MsgAddSuccess ? <div className="msg"><p className="msg-shop">Agregaste {finalCount} unidades del {item.title}</p> </div> : null}
+                    {MsgAddSuccess ? <div className="msg-add"><p className="msg-add-text">Agregaste {finalCount} unidades del {item.title}</p> </div> : null}
                 </div>
             ); 
         }else{
@@ -33,16 +33,13 @@ const ItemDetail = ( { item, count, updateStock } ) => {
                     </div>
                 );
             }else{
-                if(EndShop === false){
-                    return(
-                        <div>
-                            <ItemCount initial={initial} stock={item.stock} onAdd={addCart} price={item.price} />
-                        </div>
-                    ); 
-                }
+                return(
+                    <div>
+                        <ItemCount initial={initial} stock={item.stock} onAdd={addCart} price={item.price} />
+                    </div>
+                );
             }
-        }
-            
+        } 
     }
     
     const addCart = (count) => {

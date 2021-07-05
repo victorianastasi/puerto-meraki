@@ -45,14 +45,14 @@
 .endButton:hover{
     background-color: rgb(79, 87, 138);
 }
-.msg{
+.msg-add{
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100vw;
     background-color: rgba(215, 208, 183, 0.6);
 }
-.msg-shop{
+.msg-add-text{
     font-family: 'Amatic SC', cursive;
     font-size: 1.6rem;
     font-weight: 600;
@@ -63,10 +63,6 @@
     background-color: rgba(95, 127, 122, 0.9);
 }
 .check-cart{
-    /* position: fixed;
-    top: 15%;
-    left: 0;
-    width: 350px; */
     background-color: rgba(215, 208, 183, 0.6);
     margin: 1rem auto 0 auto;
     padding: 1rem;
@@ -104,10 +100,10 @@
     .item-detail-text{
         width: 100%;
     }
-    .msg{
+    .msg-add{
         width: 100%;
     }
-    .msg-shop{
+    .msg-add-text{
         width: 300px;
         padding: .5rem 0;
         font-size: 1.5rem;

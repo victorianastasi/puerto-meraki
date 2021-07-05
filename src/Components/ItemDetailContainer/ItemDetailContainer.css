@@ -5,3 +5,9 @@
     color: rgb(65, 235, 206);
     font-weight: 800;
 }
+.load-detail{
+    display: block;
+    margin: 5rem auto;
+    margin-right: 8rem;
+    height: 450px;
+}
