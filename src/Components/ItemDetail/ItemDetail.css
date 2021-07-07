@@ -33,7 +33,9 @@
 .endText{
     color: rgb(98, 107, 165);
     margin-bottom: 0;
-    font-weight: 600;
+    font-weight: 900;
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.5rem;
 }
 .endButton{
     background-color: rgb(98, 107, 165);
@@ -50,17 +52,18 @@
     bottom: 0;
     left: 0;
     width: 100vw;
-    background-color: rgba(215, 208, 183, 0.6);
+    background-color: rgba(40, 44, 52, 0.6);
 }
 .msg-add-text{
     font-family: 'Amatic SC', cursive;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: white;
+    text-shadow: 5px 5px 15px rgb(26, 27, 29);
     margin: 0 auto;
-    width: 500px;
+    width: 550px;
     padding: 1.5rem 0;
-    background-color: rgba(95, 127, 122, 0.9);
+    background-color: rgba(7, 161, 159, 0.9);
 }
 .check-cart{
     background-color: rgba(215, 208, 183, 0.6);

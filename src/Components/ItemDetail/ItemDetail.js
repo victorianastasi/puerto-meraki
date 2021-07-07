@@ -16,16 +16,19 @@ const ItemDetail = ( { item, count, updateStock } ) => {
     const [EndShop, setEndShop] = useState(false);
 
     const checkShop = () => {
-        if((isInCart(item.id) && EndShop) || (isInCart(item.id)===false && EndShop)){
+        if((isInCart(item.id) && EndShop) || (isInCart(item.id) === false && EndShop)){
             return(
                 <div>
                     <p className="endText">Cantidad: {finalCount} - Precio total: $ {finalCount*item.price}</p>
                     <Link className="btn btn-primary endButton mt-2" to={'/cart'} >FINALIZAR COMPRA</Link>
-                    {MsgAddSuccess ? <div className="msg-add"><p className="msg-add-text">Agregaste {finalCount} unidades del {item.title}</p> </div> : null}
+                    {MsgAddSuccess && 
+                        <div className="msg-add">
+                        <p className="msg-add-text">Agregaste el producto {item.title} al Carrito de Compras</p> 
+                        </div>}
                 </div>
             ); 
         }else{
-            if(isInCart(item.id) ===true && EndShop === false){
+            if(isInCart(item.id) === true && EndShop === false){
                 return(
                     <div className="check-cart">
                         <p className="check-cart-text">El producto {item.title} ya se encuentra en el Carrito de compras</p>
@@ -49,15 +52,11 @@ const ItemDetail = ( { item, count, updateStock } ) => {
             if(count === 0){
                 alert("La cantidad debe ser mayor a 0");
             }else{
-                if(isInCart(item.id)){
-                    alert(`El producto ${item.title} ya se encuentra en el Carrito de Compras`);
-                }else{
                     setFinalCount(count);
                     addItem(item, count);
                     setMsgAddSuccess(true);
                     setEndShop(true);
                 }
-            }  
         }
     };
 

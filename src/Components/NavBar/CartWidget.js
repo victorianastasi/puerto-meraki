@@ -10,11 +10,12 @@ const CartWidget = () => {
     for (let i = 0; i < cart.length; i++) {
         quantityWidgetItems += cart[i].quantity;
     }
-
+    
     return (
         <div>
+            <MdShoppingCart size={30}/>
             {quantityWidgetItems === 0 ? null : <span className="quantity-widget">∙ {quantityWidgetItems} ∙</span>}
-            <MdShoppingCart />
+            
         </div>
     );  
 };
