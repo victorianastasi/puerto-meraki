@@ -20,7 +20,7 @@ const ItemDetail = ( { item, count, updateStock } ) => {
             return(
                 <div>
                     <p className="endText">Cantidad: {finalCount} - Precio total: $ {finalCount*item.price}</p>
-                    <Link className="btn btn-primary endButton mt-2" to={'/cart'} >FINALIZAR COMPRA</Link>
+                    <Link className="btn btn-primary endButton mt-2" to={'/cart'} >VER EL CARRITO</Link>
                     {MsgAddSuccess && 
                         <div className="msg-add">
                         <p className="msg-add-text">Agregaste el producto {item.title} al Carrito de Compras</p> 

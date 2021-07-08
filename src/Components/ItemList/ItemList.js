@@ -9,7 +9,7 @@ const ItemList = ({ items }) => {
   if (categoryId === undefined){
     return (
       <div>
-        <h2 className= "title-products"> Nuestros Productos</h2>
+        <h2 className= "title-products">Nuestros Productos</h2>
         {items.map((item) => (
             <div key={item.id} className="products">
               <Item item={item} />
@@ -21,6 +21,7 @@ const ItemList = ({ items }) => {
     return (
       <div>
         <h2 className= "title-products"> Nuestros Productos</h2>
+        <h4 className= "title-products category">{categoryId}</h4>
         {items.filter(item => item.category === categoryId).map((item) => (
             <div key={item.id} className="products">
               <Item item={item} />

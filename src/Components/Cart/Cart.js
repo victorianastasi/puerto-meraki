@@ -35,6 +35,7 @@ const Cart = () => {
                     <div className="row buttons-shop">
                         <button className="btn btn-info btn-shop" onClick={() => clear()}>Vaciar Carrito</button>
                         <Link to="/" className=" btn btn-info btn-shop">Volver a los productos</Link>
+                        <Link to="/checkout" className=" btn btn-info btn-shop">Finalizar Compra</Link>
                     </div>
                 </div>   
             </div>

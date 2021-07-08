@@ -5,7 +5,7 @@ import ItemList from '../ItemList/ItemList.js';
 import products from '../../assets/products.json';
 import BeatLoader from "react-spinners/BeatLoader";
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = () => {
     const [items, setItems] = useState([]);
 
     const [loading, setLoading] = useState(false)
@@ -26,7 +26,6 @@ const ItemListContainer = ({greeting}) => {
 
     return (
         <div className="container-fluid body-bg">
-            <h3 className="greeting-title">{greeting}</h3>
             <ItemList items={items}/>
             {loading ? <div className="loading"><BeatLoader color={"rgb(65, 235, 206)"} loading={loading} size={30} /></div> : null }
         </div>

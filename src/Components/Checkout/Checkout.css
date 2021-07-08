@@ -1,0 +1,43 @@
+.checkout-container{
+    position: relative;
+}
+.back-to-shop{
+    border: none;
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.6rem;
+    font-weight: 600;
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    border-radius: 20px;
+    background-color: rgba(150, 63, 193, 0.7);
+}
+.back-to-shop:hover{
+    color: rgb(150, 63, 193);
+    background-color: rgb(255, 255, 255, 1);
+}
+.checkout-title{
+    font-family: 'Amatic SC', cursive;
+    font-size: 3.5rem;
+    text-shadow: 5px 5px 10px rgba(199, 154, 213, 0.5);
+    padding: 4rem 0 2rem 0;
+}
+.checkout-form{
+    width: 50%;
+    margin: 0 auto;
+}
+.form-title{
+    font-family: 'Amatic SC', cursive;
+    font-size: 2.5rem;
+    padding: 0.75rem 0rem;
+    color: rgb(65, 235, 206);
+    font-weight: 800;
+}
+.btn-form{
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    width: 220px;
+    font-weight: 600;
+}

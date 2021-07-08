@@ -7,7 +7,7 @@
     background-origin: padding-box, border-box;
     background-repeat: no-repeat; 
     border-bottom: 5px solid transparent;
-    z-index: 1;
+    z-index: 1000;
 }
 .logo-pm{
     width: 90px;
