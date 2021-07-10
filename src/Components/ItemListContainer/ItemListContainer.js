@@ -1,33 +1,41 @@
-import React from 'react';
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import './ItemListContainer.css';
 import ItemList from '../ItemList/ItemList.js';
-import products from '../../assets/products.json';
 import BeatLoader from "react-spinners/BeatLoader";
+import {getFirestore} from '../../firebase';
 
 const ItemListContainer = () => {
+
+    const [loading, setLoading] = useState(true);
+
     const [items, setItems] = useState([]);
 
-    const [loading, setLoading] = useState(false)
-
     useEffect(() => {
-        setLoading(true)
-        new Promise((result, reject) => {
-            console.log('esperar 1 segundo');
-            setTimeout(() => {
-                result(products);
-            }, 1500);
-        }).then((response) => setItems(response));
+        const db = getFirestore();
+        const itemCollection = db.collection("items");
+        itemCollection.get()
+        .then((querySnapshot) => {
+            let arrayItems = querySnapshot.docs.map((doc) => {
+                return {
+                  id: doc.id,
+                  ...doc.data(),
+                };
+              });
+            setItems(arrayItems)
+        }).catch((error) => {
+            console.log(`error en resultados ${error}`)
+        }).finally(() => {
+            setLoading(false)
+        });
     }, []);
 
-    useEffect(() => {
-        items.length && setLoading(false)
-    }, [items]);
-
     return (
-        <div className="container-fluid body-bg">
-            <ItemList items={items}/>
-            {loading ? <div className="loading"><BeatLoader color={"rgb(65, 235, 206)"} loading={loading} size={30} /></div> : null }
+        <div className="container-fluid body-bg" key={items}>
+            <h2 className= "title-products"> Nuestros Productos</h2>
+            {loading ? 
+                <div className="loading"><BeatLoader color={"rgb(65, 235, 206)"} loading={loading} size={30} /></div>
+            :
+            <ItemList items={items} />}
         </div>
     )
 }

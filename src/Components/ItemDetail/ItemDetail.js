@@ -4,7 +4,8 @@ import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 import { CartContext } from "../../context/CartContext";
 
-const ItemDetail = ( { item, count, updateStock } ) => {
+const ItemDetail = ( { item, count, updateStock, id } ) => {
+    
     const {addItem, isInCart} = useContext(CartContext);
 
     const initial = 0;
@@ -14,9 +15,9 @@ const ItemDetail = ( { item, count, updateStock } ) => {
     const [MsgAddSuccess, setMsgAddSuccess] = useState(false);
     
     const [EndShop, setEndShop] = useState(false);
-
+    
     const checkShop = () => {
-        if((isInCart(item.id) && EndShop) || (isInCart(item.id) === false && EndShop)){
+        if((isInCart(id) && EndShop) || (isInCart(id) === false && EndShop)){
             return(
                 <div>
                     <p className="endText">Cantidad: {finalCount} - Precio total: $ {finalCount*item.price}</p>
@@ -28,7 +29,7 @@ const ItemDetail = ( { item, count, updateStock } ) => {
                 </div>
             ); 
         }else{
-            if(isInCart(item.id) === true && EndShop === false){
+            if(isInCart(id) === true && EndShop === false){
                 return(
                     <div className="check-cart">
                         <p className="check-cart-text">El producto {item.title} ya se encuentra en el Carrito de compras</p>
@@ -53,7 +54,7 @@ const ItemDetail = ( { item, count, updateStock } ) => {
                 alert("La cantidad debe ser mayor a 0");
             }else{
                     setFinalCount(count);
-                    addItem(item, count);
+                    addItem(item, count, id);
                     setMsgAddSuccess(true);
                     setEndShop(true);
                 }

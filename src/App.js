@@ -19,7 +19,7 @@ function App() {
             <Home greetingHome="Bienvenidos a Puerto Meraki"/>
             <ItemListContainer />
           </Route>
-          <Route exact path="/category/:categoryId">
+          <Route exact path="/categories/:categoryId">
             <ItemListContainer />
           </Route>
           <Route exact path="/item/:id">

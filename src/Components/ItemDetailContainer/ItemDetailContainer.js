@@ -2,33 +2,32 @@ import React from 'react';
 import { useState, useEffect } from "react";
 import './ItemDetailContainer.css';
 import ItemDetail from '../ItemDetail/ItemDetail.js';
-import products from '../../assets/products.json';
 import { useParams } from 'react-router-dom';
 import PuffLoader from "react-spinners/PuffLoader";
+import {getFirestore} from '../../firebase';
 
 const ItemDetailContainer = () => {
-    const [item, setItems] = useState({});
-    
+
+    const [loadDetail, setLoadDetail] = useState(true);
+
+    const [item, setItem] = useState({});
+
     let { id } = useParams();
-
-    const [ product ] = products.filter( item => item.id === Number(id));
-
-    const [loadDetail, setLoadDetail] = useState(true)
-    
+  
+    const getItem = (id) => {
+      const db = getFirestore();
+      db.collection("items")
+        .doc(id)
+        .get()
+        .then((snapshot) => {
+          setItem(snapshot.data());
+          setLoadDetail(false);
+        });
+    };
+  
     useEffect(() => {
-        new Promise((resolve, reject) => {
-            console.log("esperar 0.5 segundo")
-            setTimeout(() => {
-                resolve(product);
-            }, 500);
-        }).then((result) => setItems(result))
-    }, [product]);
-
-    useEffect(() => {
-        setTimeout(() => {
-            setLoadDetail(false);
-        }, 1000);
-    })
+      getItem(id);
+    }, [id]);
     
     return (
         <div className="container-fluid body-bg">
@@ -36,7 +35,7 @@ const ItemDetailContainer = () => {
             {loadDetail ?
                 <div className="load-detail"><PuffLoader color={"rgb(255, 255, 255)"} loading={loadDetail} size={120} /></div>
                 :
-                <ItemDetail item={item} />
+                <ItemDetail item={item} id={id}/>
             }
         </div>
     )

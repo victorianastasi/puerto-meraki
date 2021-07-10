@@ -8,11 +8,11 @@ const Cart = () => {
     const { cart, clear } = useContext(CartContext);
 
     let total = 0;
-
+    
     for (let i = 0; i < cart.length; i++) {
         total = total + cart[i].item.price * cart[i].quantity;
     }
-
+    
     if(cart.length === 0){
          return(
             <div className="body-bg">

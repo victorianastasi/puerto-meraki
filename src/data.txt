@@ -17,3 +17,22 @@ cards
                 </div>
             </div>
 
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyApaNXGuAhJTkiFizeYj1O2CvsLrHFLbBo",
+    authDomain: "puertomeraki-67b52.firebaseapp.com",
+    projectId: "puertomeraki-67b52",
+    storageBucket: "puertomeraki-67b52.appspot.com",
+    messagingSenderId: "103678260574",
+    appId: "1:103678260574:web:6940cba048bd0a4d4acbcf"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
