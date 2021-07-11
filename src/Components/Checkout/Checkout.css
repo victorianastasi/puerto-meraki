@@ -96,6 +96,25 @@
     width: 280px;
     font-weight: 600;
 }
+.body-checkout{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+.success-shop{
+    border: 2px solid rgb(236, 219, 193);
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgb(236, 219, 193);
+    width: 600px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+.success-shop-text{
+    margin-top: 1.5rem;
+}
+.load-end{
+    margin: 2.5rem auto 0 auto;
+    height:250px;
+}
 @media screen and (max-width: 576px){
     .checkout-title{
         font-size: 3rem;
@@ -129,5 +148,8 @@
     }
     .checkout-total{
         font-size: 1.6rem;
+    }
+    .success-shop{
+        width: 300px;
     }
 }

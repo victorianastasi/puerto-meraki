@@ -1,18 +1,25 @@
-import React, { useContext, useState} from 'react';
+import React, { useContext, useState, useEffect} from 'react';
 import './Checkout.css';
-import { FcUndo, FcRedo } from 'react-icons/fc';
+import { FcUndo, FcRedo, FcApproval } from 'react-icons/fc';
+import PropagateLoader from "react-spinners/PropagateLoader";
 import { Link } from 'react-router-dom';
 import { CartContext } from "../../context/CartContext";
-import {getFirestore} from '../../firebase';
+import { getFirestore } from '../../firebase';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
 const Checkout = () => {
-    const { cart } = useContext(CartContext);
-
     const cartInfo = useContext(CartContext);
 
     const [userInfo, setUserInfo] = useState({ name: "", phone: "", email: "" });
+
+    const [newOrder, setNewOrder] = useState({});
+
+    const [orderId, setOrderId] = useState('');
+
+    const [loadEnd, setLoadEnd] =useState(false);
+
+    const [loadCheckout, setLoadCheckout] =useState(false);
 
     const inputData = (e) => {
         setUserInfo({
@@ -21,24 +28,58 @@ const Checkout = () => {
       });
     };
 
-    const db = getFirestore();
+    useEffect(() => {
+        setNewOrder({
+            buyer : userInfo, 
+            items : cartInfo.cart,
+            date : firebase.firestore.Timestamp.fromDate(new Date()),
+            total : cartInfo.total,
+        })
+    }, [userInfo, cartInfo.cart, cartInfo.total])
 
-    const orders = db.collection("orders");
-    const newOrder = {
-        buyer : userInfo, 
-        items : cart,
-        date : firebase.firestore.Timestamp.fromDate(new Date()),
-        total : cartInfo.total,
+    const handlerShop = () => {
+        setLoadEnd(true);
+        setLoadCheckout(true);
+        const db = getFirestore();
+        const orders = db.collection("orders");
+        orders
+        .add(newOrder)
+        .then(({ id }) => {
+            setOrderId(id);
+            /* const itemsDb = db.collection("items");
+            let documento = itemsDb.doc('Q6HrpXdv4cepb1Ig1QB0')
+            documento.update({stock: 9}) */
+        })
+        .catch(err => {
+            console.log("Ocurrio un error", err)
+        }).finally(() => {
+            cartInfo.clear();
+            setLoadEnd(false);
+        })
     };
-    console.log(newOrder)
-    console.log(orders)
-    /* orders.add(newOrder).then(({id}) => {
-        setOrderId(id);
-    }).catch(err => {
-        setError(err);
-    }).finally(() => {
-        setLoading(false);
-    }) */
+
+    if(loadCheckout){
+        if(loadEnd){
+            return(
+                <div className="container-fluid body-bg body-checkout">
+                    <div className="load-end"><PropagateLoader color={"rgb(7, 197, 194)"} loading={loadEnd} size={20} /></div>
+                </div>
+            )
+        }else{
+            return(
+                <div className="container-fluid body-bg body-checkout">
+                    <div className="success-shop">
+                        <h5 className="form-title check-title">Tu Pedido fue realizado con éxito!</h5>
+                        <FcApproval size={80}/>
+                        <p className="success-shop-text">El número de tu orden es:</p>
+                        <p><strong>{orderId}</strong></p>
+                        <p>Pronto nos contactaremos con vos para coordinar la entrega</p>
+                        <Link to='/' className="btn btn-light btn-form">Ir al inicio</Link>
+                    </div>
+                </div>
+            )
+        }
+    };
 
     return (
         <div className="container-fluid body-bg checkout-container">
@@ -85,7 +126,8 @@ const Checkout = () => {
             </div>
             <div className="final-shop">
                 <Link className="btn btn-secondary btn-form" to="/cart"><FcUndo size={25}/> Volver</Link>
-                <button type="submit" className="btn btn-secondary btn-form">Enviar orden de compra <FcRedo size={25}/></button>
+                <button type="submit" className="btn btn-secondary btn-form" onClick={handlerShop}>
+                Enviar orden de compra <FcRedo size={25}/></button>
             </div>
         </div>
     )

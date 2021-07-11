@@ -12,7 +12,7 @@ const Cart = () => {
     if(cart.length === 0){
          return(
             <div className="body-bg">
-                <h3 className="cart-title">Carrito</h3>
+                <h3 className="cart-title">Carrito de Compras</h3>
                 <div className="cart-empty">
                     <p className="cart-empty-text">Tu carrito de compras esta vacio </p>
                     <Link to="/" className=" btn btn-dark cart-empty-button">Ver los productos</Link>
@@ -22,7 +22,7 @@ const Cart = () => {
     }else{
         return (
             <div className="body-bg">
-                <h3 className="cart-title">Carrito</h3>
+                <h3 className="cart-title">Carrito de Compras</h3>
                 <div>
                     {cart.map((item, key) => <CartItem key={key} {...item} />)}
                     <div>
