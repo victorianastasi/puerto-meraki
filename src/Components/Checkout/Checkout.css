@@ -33,11 +33,101 @@
     color: rgb(65, 235, 206);
     font-weight: 800;
 }
+
+.check-title{
+    margin-top: 2rem;
+}
+.row-items-checkout{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    margin: 0 auto;
+}
+.row-items-checkout p{
+    margin: 0;
+    padding: 10px 0;
+}
+.checkout-header{
+    background-color: rgba(255,255,255,0.3);
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.7rem;
+}
+.row-items-checkout-title{
+    flex-basis: 40%;
+}
+.row-items-checkout-price, .row-items-checkout-quantity, .row-items-checkout-subtotal{
+    flex-basis: 20%;
+}
+.item-title-img{
+    text-align: start;
+    padding-left: 20px;
+}
+.row-item-data-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.checkout-data{
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+.checkout-total{
+    font-size: 1.9rem;
+    color: rgb(236, 219, 193);
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+.final-shop{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
 .btn-form{
+    text-align: center;
     font-family: 'Amatic SC', cursive;
     font-size: 1.7rem;
     font-weight: 600;
     margin: 1rem 0;
-    width: 220px;
+    width: 280px;
     font-weight: 600;
+}
+@media screen and (max-width: 576px){
+    .checkout-title{
+        font-size: 3rem;
+        padding: 4rem 0 0rem 0;
+    }
+    .checkout-form{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .form-title{
+        font-size: 2rem;
+    }
+    .check-title{
+        margin-top: 1rem;
+    }
+    .row-items-checkout{
+        width: 100%;
+    }
+    .checkout-header{
+        font-size: 1.4rem;
+    }
+    .item-title-img{
+        text-align: center;
+        padding-left: 0px;
+    }
+    .row-item-data-img{
+        display: block;
+        width: 75px;
+        height: 75px;
+        margin: 0 auto;
+    }
+    .checkout-total{
+        font-size: 1.6rem;
+    }
 }
