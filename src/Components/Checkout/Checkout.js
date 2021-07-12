@@ -46,15 +46,18 @@ const Checkout = () => {
         .add(newOrder)
         .then(({ id }) => {
             setOrderId(id);
-            /* const itemsDb = db.collection("items");
-            let documento = itemsDb.doc('Q6HrpXdv4cepb1Ig1QB0')
-            documento.update({stock: 9}) */
+            let batch = db.batch();
+            const itemsDb = db.collection("items");
+            cartInfo.cart.forEach((item) => {
+                batch.update(itemsDb.doc(item.id), {stock: (item.item.stock - item.quantity) })
+            })
+            batch.commit().then(() => {
+                cartInfo.clear();
+                setLoadEnd(false);
+            });
         })
         .catch(err => {
             console.log("Ocurrio un error", err)
-        }).finally(() => {
-            cartInfo.clear();
-            setLoadEnd(false);
         })
     };
 
