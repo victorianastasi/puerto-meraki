@@ -1,14 +1,16 @@
-import React from 'react';
-import "./Home.css";
-import home from '../../assets/images/home-pic.jpg';
+import React from 'react'
+import './Home.css';
 
-const Home = ({greetingHome}) => {
+const Home = () => {
     return (
-        <div className="body-home">
-            <h3 className="home-title"><span className="home-title-text">{greetingHome}</span></h3>
-            <img className="home-img" src={home} alt="Cuadros - Puerto Meraki" />             
+        <div>
+            <div className="home">
+                <h3 className="home-title">
+                    Bienvenidos a Puerto Meraki
+                </h3>
+            </div>
         </div>
     )
 }
 
-export default Home;
+export default Home

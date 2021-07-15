@@ -1,5 +1,6 @@
 import './App.css';
 import NavBar from './Components/NavBar/NavBar';
+import Home from './Components/Home/Home';
 import Footer from './Components/Footer/Footer';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
@@ -15,6 +16,7 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path="/">
+            <Home />
             <ItemListContainer />
           </Route>
           <Route exact path="/categories/:categoryId">
