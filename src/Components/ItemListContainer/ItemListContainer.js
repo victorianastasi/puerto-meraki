@@ -28,10 +28,9 @@ const ItemListContainer = () => {
             setLoading(false)
         });
     }, []);
-
+    
     return (
         <div className="container-fluid body-bg" key={items}>
-            <h2 className= "title-products"> Nuestros Productos</h2>
             {loading ? 
                 <div className="loading"><BeatLoader color={"rgb(65, 235, 206)"} loading={loading} size={30} /></div>
             :

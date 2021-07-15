@@ -9,15 +9,59 @@
 .amount{
     font-family: 'Nunito', sans-serif;
     font-size: 1rem;
-    padding: 0 1rem;
+    padding: 0;
+    width: 110px;
+    display: inline-block;
 }
 .counter-button{
-    font-size: 24px;
+    display: inline-block;
+    width: 60px;
 }
-.counter-button:hover{
+.counter-button:hover .counter-button-icon{
     color: rgb(199, 154, 213);
     transition: all 0.2s;
 }
+.counter-button-icon{
+    font-size: 24px;
+}
+.stock{
+    margin-top: 0.75rem;
+}
 .price{
-    margin: 1rem 0;
+    margin: 0.75rem 0 1rem 0;
+}
+.alert-no-stock{
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.5rem;
+    background-image: linear-gradient(to right, rgb(255, 208, 1), orange);
+    padding: 1rem 0.5rem;
+    border-radius: 10px;
+    color: rgb(10, 10, 10);
+}
+.other-products{
+    border: none;
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: white;
+    width: 210px;
+    background-image: linear-gradient(to right, rgb(10, 10, 10), rgb(40, 44, 52));
+    transition: 500ms;
+}
+.other-products:hover, .other-products:focus {
+    box-shadow: inset 0 -3.25em 0 0 rgb(199, 154, 213);
+    color: rgb(25, 25, 25);
+}
+.alert-count{
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    width: 305px;
+    padding-left: 0;
+    padding-right: 0;
+}
+@media screen and (max-width: 576px){
+    .alert-count{
+        right: 12px;
+    }
 }

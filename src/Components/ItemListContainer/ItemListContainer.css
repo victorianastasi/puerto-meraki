@@ -11,9 +11,10 @@
     padding: 2rem 0 0.5rem 0;
 }
 .loading{
-    margin: 7rem auto 0 auto;
+    margin: 0 auto;
+    padding-top: 10rem;
     display: block;
-    height: 450px;
+    height: 550px;
     color: rgb(164, 230, 219);
 }
 @media screen and (max-width: 576px){
@@ -22,6 +23,6 @@
         padding-bottom: 0;
     }
     .loading{
-        margin: 4rem auto 0 auto;
+        padding-top: 6rem;
     }
 }

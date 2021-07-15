@@ -2,11 +2,12 @@
     width: 80%;
     background-color: rgb(245, 245, 245);
     margin: 1rem auto 2.5rem auto;
-    padding: 3rem 1rem;
+    padding: 1.5rem 1rem 2.5rem 1rem;
     color: rgb(40, 44, 52);
     font-size: 1rem;
     display: flex;
     flex-flow: row wrap;
+    position: relative;
 }
 .item-detail-img{
     width: 60%;
@@ -22,7 +23,6 @@
     display: inline-block;
     padding: 0 1.5rem;
     margin: auto 0;
-    
 }
 .item-detail-title{
     font-family: 'Amatic SC', cursive;
@@ -30,66 +30,72 @@
     margin: 0.75rem 0rem;
     color: rgb(7, 197, 194);
 }
-.endText{
-    color: rgb(98, 107, 165);
-    margin-bottom: 0;
-    font-weight: 900;
-    font-family: 'Amatic SC', cursive;
-    font-size: 1.5rem;
-}
-.endButton{
-    background-color: rgb(98, 107, 165);
+.button-detail{
     border: none;
     font-family: 'Amatic SC', cursive;
     font-size: 1.6rem;
     font-weight: 600;
 }
-.endButton:hover{
+.end-button{
+    background-color: rgb(40, 44, 52);
+    color: rgb(236, 219, 193);
+}
+.end-button:hover{
+    background-color: rgb(30, 33, 39);
+    color: rgb(236, 219, 193);
+    box-shadow: 0 0.5rem 0.5rem -0.4rem rgb(40, 44, 52);
+    transform: translateY(-0.25rem);
+    transition: all 200ms;
+}
+.continue-button{
+    background-color: rgb(98, 107, 165);
+    color: white;
+}
+.continue-button:hover{
     background-color: rgb(79, 87, 138);
+    color: white;
+    box-shadow: 0 0.5rem 0.5rem -0.4rem rgb(98, 107, 165);
+    transform: translateY(-0.25rem);
+    transition: all 200ms;
 }
 .msg-add{
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100vw;
-    background-color: rgba(40, 44, 52, 0.6);
 }
 .msg-add-text{
     font-family: 'Amatic SC', cursive;
     font-size: 1.5rem;
     font-weight: 600;
     color: white;
-    text-shadow: 5px 5px 15px rgb(26, 27, 29);
-    margin: 0 auto;
-    width: 550px;
+    text-shadow: 5px 5px 10px rgb(26, 27, 29);
+    margin: 0;
+    width: 500px;
     padding: 1.5rem 0;
-    background-color: rgba(7, 161, 159, 0.9);
+    background-color: rgba(7, 161, 159, 0.7);
 }
 .check-cart{
-    background-color: rgba(215, 208, 183, 0.6);
+    background-image: linear-gradient(to right, rgb(119,4,200), rgb(125, 65, 155));
     margin: 1rem auto 0 auto;
     padding: 1rem;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(122, 51, 158, 1);
+    font-family: 'Amatic SC', cursive;
+    font-weight: 700;
 }
 .check-cart-text{
     margin: 0;
-    color: rgb(122, 51, 158);
-    font-family: 'Amatic SC', cursive;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    color: white;
 }
 .btn-check-cart{
-    background-color: rgb(134, 56, 173);
-    color: white;
-    font-family: 'Amatic SC', cursive;
-    font-size: 1.6rem;
-    font-weight: 700;
+    background-color: white;
+    font-size: 1.5rem;
     padding: 0.5rem 1.5rem;
+    color: rgb(122, 51, 158);
 }
 .btn-check-cart:hover{
-    background-color: rgb(103, 43, 133);
-    color: white;
-    
+    color: rgb(122, 51, 158);
+    box-shadow: 0px 17px 5px -13px black;
 }
 @media screen and (max-width: 576px){
     .item-detail{
@@ -102,13 +108,20 @@
     }
     .item-detail-text{
         width: 100%;
+        padding: 0;
     }
     .msg-add{
-        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
     }
     .msg-add-text{
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin: 0 auto;
         width: 300px;
-        padding: .5rem 0;
-        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+        background-color: rgba(7, 161, 159, 0.9);
     }
 }

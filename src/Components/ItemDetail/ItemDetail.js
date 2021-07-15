@@ -1,18 +1,18 @@
 import React, { useState, useContext } from 'react';
 import './ItemDetail.css';
+import { IoIosArrowDroprightCircle, IoIosArrowDropleftCircle } from 'react-icons/io';
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 import { CartContext } from "../../context/CartContext";
+
 
 const ItemDetail = ( { item, count, updateStock, id } ) => {
     
     const {addItem, isInCart} = useContext(CartContext);
 
-    const initial = 0;
+    const initial = 1;
     
     const [finalCount, setFinalCount] = useState(count);
-
-    const [MsgAddSuccess, setMsgAddSuccess] = useState(false);
     
     const [EndShop, setEndShop] = useState(false);
     
@@ -20,12 +20,12 @@ const ItemDetail = ( { item, count, updateStock, id } ) => {
         if((isInCart(id) && EndShop) || (isInCart(id) === false && EndShop)){
             return(
                 <div>
-                    <p className="endText">Cantidad: {finalCount} - Precio total: $ {finalCount*item.price}</p>
-                    <Link className="btn btn-primary endButton mt-2" to={'/cart'} >VER EL CARRITO</Link>
-                    {MsgAddSuccess && 
-                        <div className="msg-add">
-                        <p className="msg-add-text">Agregaste el producto {item.title} al Carrito de Compras</p> 
-                        </div>}
+                    <Link className="btn button-detail end-button mt-2 mb-2" to={'/cart'} >VER EL CARRITO <IoIosArrowDroprightCircle size={25}/></Link>
+                    <Link className="btn button-detail continue-button mt-2" to={'/'} ><IoIosArrowDropleftCircle size={25} /> CONTINUAR COMPRANDO</Link>
+                    <div className="msg-add">
+                        <p className="msg-add-text pb-0 mb-0">Agregaste el producto {item.title} al Carrito de Compras</p> 
+                        <p className="msg-add-text pt-0 mt-0">Cantidad: {finalCount} - Precio total: $ {finalCount*item.price}</p>
+                    </div>
                 </div>
             ); 
         }else{
@@ -45,7 +45,7 @@ const ItemDetail = ( { item, count, updateStock, id } ) => {
             }
         } 
     }
-    
+   
     const addCart = (count) => {
         if (updateStock < count){
             alert("No hay stock para la cantidad que quieres añadir");
@@ -53,11 +53,10 @@ const ItemDetail = ( { item, count, updateStock, id } ) => {
             if(count === 0){
                 alert("La cantidad debe ser mayor a 0");
             }else{
-                    setFinalCount(count);
-                    addItem(item, count, id);
-                    setMsgAddSuccess(true);
-                    setEndShop(true);
-                }
+                setFinalCount(count);
+                addItem(item, count, id);
+                setEndShop(true);
+            }
         }
     };
 
