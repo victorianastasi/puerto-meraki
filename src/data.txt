@@ -36,3 +36,44 @@ cards
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 </script>
+
+/* setTimeout(() => {
+            result(products);
+        }, 1500); */
+
+   
+   
+    const modifyQuantity = (id, qty) =>{
+        const cartLenght = cart.length;
+        if(cartLenght !== 0){
+            for(let i = 0; i < cartLenght; i++){
+                if(cart[i].id === id){
+                    cart[i].quantity = qty;
+                    console.log(cart[i].quantity)
+                }
+            }
+        }else{
+            return 0;
+        }
+
+/* 
+        if (cartLenght === 0) {
+            return 0;
+        } else {
+            for (let i = 0; i < cartLenght; i++) {
+                if (cart[i].id === id) {
+                    console.log(cart[i].quantity)
+                    cart[i].quantity = qty;
+                    console.log(cart[i].quantity)
+                    return cart[i].quantity;
+                    
+                }
+            }
+            return 0;
+        } */
+        
+    }
+
+    useEffect(() => {
+        modifyQuantity();
+    });

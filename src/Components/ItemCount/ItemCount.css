@@ -26,6 +26,7 @@
 }
 .stock{
     margin-top: 0.75rem;
+    color: rgba(40, 44, 52, 0.7);
 }
 .price{
     margin: 0.75rem 0 1rem 0;

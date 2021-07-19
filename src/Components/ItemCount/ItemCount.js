@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState } from 'react';
 import { BsFillPlusCircleFill, BsFillDashCircleFill } from 'react-icons/bs';
 import { GoAlert } from 'react-icons/go';
 import { IoIosArrowDroprightCircle } from 'react-icons/io';
@@ -15,7 +15,7 @@ const ItemCount = ({initial, stock, onAdd, price}) => {
     const[alertCount, setAlertCount] = useState(false); 
     const[alertStock, setAlertStock] = useState(false); 
 
-    const addItem = (e) => {
+    const addItemCount = (e) => {
         e.preventDefault();
         if(count < stock){
             setCount(count + 1);
@@ -25,7 +25,7 @@ const ItemCount = ({initial, stock, onAdd, price}) => {
         }
     }
 
-    const removeItem = (e) => {
+    const removeItemCount = (e) => {
         e.preventDefault();
         if(count > initial){
             setCount(count - 1);
@@ -48,11 +48,11 @@ const ItemCount = ({initial, stock, onAdd, price}) => {
         return (
             <div className="product-card-unique">
                 <div className="prod-amount">
-                    <span className="counter-button" onClick={(count) => removeItem(count)}><BsFillDashCircleFill className="counter-button-icon"/></span>
+                    <p className="price">Precio: $ {count*price} </p>
+                    <span className="counter-button" onClick={(count) => removeItemCount(count)}><BsFillDashCircleFill className="counter-button-icon"/></span>
                     <span className="amount">Cantidad: {count}</span>
-                    <span className="counter-button" onClick={(count) => addItem(count)}><BsFillPlusCircleFill className="counter-button-icon" /></span>
+                    <span className="counter-button" onClick={(count) => addItemCount(count)}><BsFillPlusCircleFill className="counter-button-icon" /></span>
                     <p className="stock">Stock disponible: {updateStock}</p>
-                    <p className="price">Precio Total: $ {count*price} </p>
                     <button className="btn btn-dark mt-2 mb-3" onClick={()=>onAdd(count)}>Agregar al carrito</button>
                 </div>
                 {alertCount && 
@@ -63,7 +63,7 @@ const ItemCount = ({initial, stock, onAdd, price}) => {
                 }
             </div>
         );
-    } 
+    }
 }
 
 export default ItemCount;

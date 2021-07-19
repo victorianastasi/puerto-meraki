@@ -14,7 +14,7 @@
     color: white;
     text-shadow: 0px 0px 15px black;
     width: 300px;
-    animation: bgCategory 3s infinite;
+    animation: bgCategory 2500ms infinite;
     border-radius: 5px;
 }
 @keyframes bgCategory {

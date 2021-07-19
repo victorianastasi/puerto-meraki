@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { CartContext } from "../../context/CartContext";
 
 
-const ItemDetail = ( { item, count, updateStock, id } ) => {
+const ItemDetail = ( { item, count, id } ) => {
     
     const {addItem, isInCart} = useContext(CartContext);
 
@@ -47,17 +47,9 @@ const ItemDetail = ( { item, count, updateStock, id } ) => {
     }
    
     const addCart = (count) => {
-        if (updateStock < count){
-            alert("No hay stock para la cantidad que quieres añadir");
-        }else{
-            if(count === 0){
-                alert("La cantidad debe ser mayor a 0");
-            }else{
-                setFinalCount(count);
-                addItem(item, count, id);
-                setEndShop(true);
-            }
-        }
+        setFinalCount(count);
+        addItem(item, count, id);
+        setEndShop(true);
     };
 
     return (
@@ -69,7 +61,6 @@ const ItemDetail = ( { item, count, updateStock, id } ) => {
                 <div className="item-detail-text">
                     <p className="item-detail-title">{item.title}</p>
                     <p className="item-detail-description">Descripción: {item.description}</p>
-                    <p>Precio por unidad: $ {item.price}</p>
                     {checkShop()}
                 </div>
             </div>

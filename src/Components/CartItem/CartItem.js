@@ -21,8 +21,8 @@ const CartItem = ({ item, quantity, id }) => {
                 <p className="item-cart-text">Precio: $ {item.price * quantity}</p>
             </div>
             <div className="col-12 col-sm-2">
-                <button className="btn btn-remove" onClick={() => removeItem(id)}><FaTrashAlt /></button>
-            </div>
+                <button className="btn btn-dark btn-remove" onClick={() => removeItem(id)}><FaTrashAlt /></button>
+            </div> 
         </div>
     )
 }

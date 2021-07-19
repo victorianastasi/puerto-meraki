@@ -9,21 +9,19 @@
 }
 .cart-item-image{
     width: inherit;
+    box-shadow: 5px 5px 10px rgb(35, 35, 35);
 }
 .item-cart-text{
     margin: 0;
 }
 .btn-remove{
-    background-color: rgb(189, 53, 24);
     font-size: 1.2rem;
     font-weight: 600;
     border: none;
     width: 80%;
-    color: white;
 }
 .btn-remove:hover{
     background-color: rgb(139, 40, 18);
-    color: white;
 }
 @media screen and (max-width: 576px){
     .row-item{

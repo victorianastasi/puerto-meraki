@@ -1,6 +1,8 @@
 import React, { useContext, useState, useEffect} from 'react';
 import './Checkout.css';
 import { FcUndo, FcRedo, FcApproval } from 'react-icons/fc';
+import { ImArrowLeft2 } from 'react-icons/im';
+import { GoAlert } from 'react-icons/go';
 import PropagateLoader from "react-spinners/PropagateLoader";
 import { Link } from 'react-router-dom';
 import { CartContext } from "../../context/CartContext";
@@ -12,6 +14,8 @@ const Checkout = () => {
     const cartInfo = useContext(CartContext);
 
     const [userInfo, setUserInfo] = useState({ name: "", phone: "", email: "" });
+    
+    const [alertData, setAlertData] = useState(false);
 
     const [newOrder, setNewOrder] = useState({});
 
@@ -22,6 +26,7 @@ const Checkout = () => {
     const [loadCheckout, setLoadCheckout] =useState(false);
 
     const inputData = (e) => {
+        setAlertData(false)
         setUserInfo({
         ...userInfo,
         [e.target.id]: e.target.value,
@@ -38,27 +43,31 @@ const Checkout = () => {
     }, [userInfo, cartInfo.cart, cartInfo.total])
 
     const handlerShop = () => {
-        setLoadEnd(true);
-        setLoadCheckout(true);
-        const db = getFirestore();
-        const orders = db.collection("orders");
-        orders
-        .add(newOrder)
-        .then(({ id }) => {
-            setOrderId(id);
-            let batch = db.batch();
-            const itemsDb = db.collection("items");
-            cartInfo.cart.forEach((item) => {
-                batch.update(itemsDb.doc(item.id), {stock: (item.item.stock - item.quantity) })
+        if(userInfo.name === "" || userInfo.phone === "" || userInfo.email === ""){
+            setAlertData(true);
+        }else{
+            setLoadEnd(true);
+            setLoadCheckout(true);
+            const db = getFirestore();
+            const orders = db.collection("orders");
+            orders
+            .add(newOrder)
+            .then(({ id }) => {
+                setOrderId(id);
+                let batch = db.batch();
+                const itemsDb = db.collection("items");
+                cartInfo.cart.forEach((item) => {
+                    batch.update(itemsDb.doc(item.id), {stock: (item.item.stock - item.quantity) })
+                })
+                batch.commit().then(() => {
+                    cartInfo.clear();
+                    setLoadEnd(false);
+                });
             })
-            batch.commit().then(() => {
-                cartInfo.clear();
-                setLoadEnd(false);
-            });
-        })
-        .catch(err => {
-            console.log("Ocurrio un error", err)
-        })
+            .catch(err => {
+                console.log("Ocurrio un error", err)
+            })
+        }
     };
 
     if(loadCheckout){
@@ -74,9 +83,10 @@ const Checkout = () => {
                     <div className="success-shop">
                         <h5 className="form-title check-title">Tu Pedido fue realizado con éxito!</h5>
                         <FcApproval size={80}/>
-                        <p className="success-shop-text">El número de tu orden es:</p>
+                        <p className="success-shop-text mt-3 mb-0">Gracias por tu pedido!</p>
+                        <p className=" mt-3 mb-1">El número de tu orden es:</p>
                         <p><strong>{orderId}</strong></p>
-                        <p>Pronto nos contactaremos con vos para coordinar la entrega</p>
+                        <p>En breve nos contactaremos con vos!</p>
                         <Link to='/' className="btn btn-light btn-form">Ir al inicio</Link>
                     </div>
                 </div>
@@ -86,22 +96,22 @@ const Checkout = () => {
 
     return (
         <div className="container-fluid body-bg checkout-container">
-            <Link to="/cart" className=" btn btn-dark back-to-shop">Volver al carrito de compras</Link>
+            <Link to="/cart" className=" btn btn-dark back-to-shop"><ImArrowLeft2 /> Volver al carrito de compras</Link>
             <h3 className="checkout-title">Finaliza tu Compra</h3>
             <form className="checkout-form">
                 <h5 className="form-title">Completa tus datos</h5>
                 <div className="form-group">
                     <label htmlFor="name">Nombre</label>
-                    <input type="text" className="form-control" id="name" onChange={inputData}></input>
+                    <input type="text" className="form-control" id="name" onChange={inputData} required></input>
                 </div>
                 <div className="form-group">
                     <label htmlFor="email">Correo electrónico</label>
-                    <input type="email" className="form-control" id="email" aria-describedby="emailHelp" onChange={inputData}></input>
+                    <input type="email" className="form-control" id="email" aria-describedby="emailHelp" onChange={inputData} required></input>
                     <small id="emailHelp" className="form-text text-muted">Nunca compartiremos tu correo electrónico.</small>
                 </div>
                 <div className="form-group">
                     <label htmlFor="phone">Teléfono</label>
-                    <input type="text" className="form-control" id="phone" onChange={inputData}></input>
+                    <input type="text" className="form-control" id="phone" onChange={inputData} required></input>
                 </div>
             </form>
             <h5 className="form-title check-title">Chequea tu Pedido</h5>
@@ -132,6 +142,13 @@ const Checkout = () => {
                 <button type="submit" className="btn btn-secondary btn-form" onClick={handlerShop}>
                 Enviar orden de compra <FcRedo size={25}/></button>
             </div>
+            {alertData && 
+                <div className="alert alert-danger alert-data mt-1 mb-1">
+                    <p className="mb-1"><GoAlert size={40} /></p> 
+                    <p className="mb-1 alert-data-text">Completa todos tus datos </p> 
+                    <p className="mb-1">(Nombre, Correo electrónico y Teléfono)</p> 
+                </div>
+            }
         </div>
     )
 }

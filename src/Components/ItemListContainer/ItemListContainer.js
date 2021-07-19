@@ -33,8 +33,9 @@ const ItemListContainer = () => {
         <div className="container-fluid body-bg" key={items}>
             {loading ? 
                 <div className="loading"><BeatLoader color={"rgb(65, 235, 206)"} loading={loading} size={30} /></div>
-            :
-            <ItemList items={items} />}
+                :
+                <ItemList items={items} />
+            }
         </div>
     )
 }
