@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ItemListContainer.css';
 import ItemList from '../ItemList/ItemList.js';
-import BeatLoader from "react-spinners/BeatLoader";
+import BeatLoader from 'react-spinners/BeatLoader';
 import {getFirestore} from '../../firebase';
 
 const ItemListContainer = () => {

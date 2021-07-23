@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 
 export const CartContext = React.createContext();
 
@@ -9,7 +9,6 @@ export const CartProvider = ({ defaultValue = [], children }) => {
 
     const addItem = (item, quantity, id) => {
         setCart([...cart, { item, quantity, id }]);
-        console.log("Item:", item, "Quantity:", quantity, "id:", id );
     };
 
     const removeItem = (ItemId) => {

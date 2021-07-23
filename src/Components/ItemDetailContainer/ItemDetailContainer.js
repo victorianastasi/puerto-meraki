@@ -1,10 +1,9 @@
-import React from 'react';
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import './ItemDetailContainer.css';
 import ItemDetail from '../ItemDetail/ItemDetail.js';
 import { useParams } from 'react-router-dom';
-import PuffLoader from "react-spinners/PuffLoader";
-import {getFirestore} from '../../firebase';
+import PuffLoader from 'react-spinners/PuffLoader';
+import { getFirestore } from '../../firebase';
 
 const ItemDetailContainer = () => {
 

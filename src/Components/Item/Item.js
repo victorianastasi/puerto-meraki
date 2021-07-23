@@ -3,7 +3,7 @@ import './Item.css';
 import { BsSearch  } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
-const Item = ({item}) => {
+const Item = ({ item }) => {
     
     return (
         <div className="product-card">

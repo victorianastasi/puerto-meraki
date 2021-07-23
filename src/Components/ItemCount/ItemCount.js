@@ -1,4 +1,4 @@
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 import { BsFillPlusCircleFill, BsFillDashCircleFill } from 'react-icons/bs';
 import { GoAlert } from 'react-icons/go';
 import { IoIosArrowDroprightCircle } from 'react-icons/io';
@@ -6,14 +6,15 @@ import { RiErrorWarningFill } from 'react-icons/ri';
 import './ItemCount.css';
 import { Link } from 'react-router-dom';
 
-const ItemCount = ({initial, stock, onAdd, price}) => {
+const ItemCount = ({ initial, stock, onAdd, price }) => {
     
-    const[count, setCount] = useState(initial); 
+    const [count, setCount] = useState(initial); 
     
     const updateStock = stock - count;
 
-    const[alertCount, setAlertCount] = useState(false); 
-    const[alertStock, setAlertStock] = useState(false); 
+    const [alertCount, setAlertCount] = useState(false); 
+
+    const [alertStock, setAlertStock] = useState(false); 
 
     const addItemCount = (e) => {
         e.preventDefault();
@@ -56,10 +57,10 @@ const ItemCount = ({initial, stock, onAdd, price}) => {
                     <button className="btn btn-dark mt-2 mb-3" onClick={()=>onAdd(count)}>Agregar al carrito</button>
                 </div>
                 {alertCount && 
-                    <div className="alert alert-danger alert-count mt-1 mb-1"><RiErrorWarningFill size={30} /> La cantidad debe ser mayor a 0!</div>
+                    <div className="alert alert-danger alert-count"><RiErrorWarningFill size={30} /> La cantidad no puede ser menor a 1</div>
                 }
                 {alertStock && 
-                    <div className="alert alert-danger alert-count mt-1 mb-1"><RiErrorWarningFill size={30} /> No se pueden agregar más unidades!</div>
+                    <div className="alert alert-danger alert-count"><RiErrorWarningFill size={30} /> No se pueden agregar más unidades</div>
                 }
             </div>
         );

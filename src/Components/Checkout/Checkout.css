@@ -2,6 +2,7 @@
     position: relative;
 }
 .back-to-shop{
+    box-shadow: 5px 5px 10px black;
     border: none;
     font-family: 'Amatic SC', cursive;
     font-size: 1.6rem;
@@ -21,6 +22,24 @@
     font-size: 3.5rem;
     text-shadow: 5px 5px 10px rgba(199, 154, 213, 0.5);
     padding: 4rem 0 2rem 0;
+}
+.checkout-empty{
+    background-image: url("../../assets/images/empty-cart.jpg");
+    background-size: cover;
+    height: 550px;
+}
+.checkout-empty-text{
+    font-family: 'Amatic SC', cursive;
+    font-size: 2.5rem;
+    color: rgb(40, 44, 52);
+    padding-top: 8rem;
+}
+.checkout-empty-button{
+    font-family: 'Amatic SC', cursive;
+    font-size: 2rem;
+    background-color: rgba(40, 44, 52, 0.8);
+    border: none;
+    padding: 0.5rem 2rem;
 }
 .checkout-form{
     width: 50%;
@@ -74,7 +93,7 @@
     border-bottom: 1px solid rgba(255,255,255,0.3);
 }
 .checkout-total{
-    font-size: 1.9rem;
+    font-size: 2.2rem;
     color: rgb(236, 219, 193);
     background-color: rgba(0, 0, 0, 0.3);
     padding: 10px 0;
@@ -106,6 +125,7 @@
     width: 600px;
     margin: 0 auto;
     padding: 1.5rem 1rem;
+    background-color: rgb(33, 36, 43);
 }
 .success-shop-text{
     font-family: 'Amatic SC', cursive;
@@ -118,15 +138,31 @@
 }
 .alert-data{
     width: 40%;
-    margin: 0 auto;
+    margin: 1.5rem auto 0.5rem auto;
 }
 .alert-data-text{
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.8rem;
+}
+.alert-data-text-fields{
     font-weight: 700;
+    font-family: "Nunito", sans-serif;
 }
 @media screen and (max-width: 576px){
     .checkout-title{
         font-size: 3rem;
         padding: 4rem 0 0rem 0;
+    }
+    .checkout-empty{
+        height: 500px;
+    }
+    .checkout-empty-text{
+        font-size: 2rem;
+        padding-top: 4rem;
+    }
+    .back-to-shop{
+        font-size: 1.3rem;
+        background-color: rgba(175, 132, 197, 0.7);
     }
     .checkout-form{
         width: 100%;
@@ -137,6 +173,7 @@
     }
     .check-title{
         margin-top: 0;
+        font-size: 2.3rem;
     }
     .row-items-checkout{
         width: 100%;
@@ -158,10 +195,11 @@
         padding-top: 2rem;
     }
     .checkout-total{
-        font-size: 1.6rem;
+        font-size: 1.9rem;
     }
     .btn-form{
-        width: 220px;
+        width: 250px;
+        margin: 0.75rem 0;
     }
     .success-shop{
         width: 300px;
@@ -171,5 +209,8 @@
     }
     .alert-data{
         width: 100%;
+    }
+    .alert-data-text{
+        font-size: 1.7rem;
     }
 }

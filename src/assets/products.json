@@ -1,8 +1,0 @@
-[
-    { "id": 1, "title": "Cuadro Calado - Perrito", "price": 100, "pictureUrl": "/img-products/pic1.jpg", "description": "Cuadro decorativo confeccionado en madera mdf de 5.5 mm. Sus medidas son 130cm x 50cm. Colores disponibles: negro y blanco.", "category": "animales", "stock": 10 },
-    { "id": 2, "title": "Cuadro Calado - Hojas", "price": 100, "pictureUrl": "/img-products/pic2.jpg", "description": "Cuadro decorativo confeccionado en madera mdf de 5.5 mm. Sus medidas son 130cm x 50cm. Colores disponibles: negro y blanco.", "category": "naturaleza", "stock": 10 },
-    { "id": 3, "title": "Cuadro Calado - Colibrí", "price": 100, "pictureUrl": "/img-products/pic3.jpg", "description": "Cuadro decorativo confeccionado en madera mdf de 5.5 mm. Sus medidas son 130cm x 50cm. Colores disponibles: negro y blanco.", "category": "animales", "stock": 10 },
-    { "id": 4, "title": "Cuadro Calado - Mundo", "price": 100, "pictureUrl": "/img-products/pic4.jpg", "description": "Cuadro decorativo confeccionado en madera mdf de 5.5 mm. Sus medidas son 130cm x 50cm. Colores disponibles: negro y blanco.", "category": "naturaleza", "stock": 10 },
-    { "id": 5, "title": "Cuadro Calado - Guitarras", "price": 100, "pictureUrl": "/img-products/pic5.jpg", "description": "Cuadro decorativo confeccionado en madera mdf de 5.5 mm. Sus medidas son 130cm x 50cm. Colores disponibles: negro y blanco.", "category": "musica", "stock": 10 },
-    { "id": 6, "title": "Cuadro Calado - Música", "price": 100, "pictureUrl": "/img-products/pic6.jpg", "description": "Cuadro decorativo confeccionado en madera mdf de 5.5 mm. Sus medidas son 130cm x 50cm. Colores disponibles: negro y blanco.", "category": "musica", "stock": 10 }
-]

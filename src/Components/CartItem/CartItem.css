@@ -6,6 +6,7 @@
     font-size: 1.2rem;
     margin: 2rem 0;
     padding: 1rem 3rem;
+    font-family: "Nunito", sans-serif;
 }
 .cart-item-image{
     width: inherit;
@@ -20,9 +21,6 @@
     border: none;
     width: 80%;
 }
-.btn-remove:hover{
-    background-color: rgb(139, 40, 18);
-}
 @media screen and (max-width: 576px){
     .row-item{
         font-weight: 500;
@@ -34,5 +32,8 @@
         font-size: 1.1rem;
         font-weight: 500;
         width: 50%;
+    }
+    .cart-item-image{
+        margin-bottom: 0.75rem;
     }
 }

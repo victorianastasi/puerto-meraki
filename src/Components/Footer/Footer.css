@@ -2,7 +2,7 @@
     background-color: rgb(245, 245, 245);
     font-family: 'Nanum Brush Script', cursive;
     padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1rem;
     color: rgb(40, 44, 52);
     text-align: center;
 }
@@ -10,11 +10,21 @@
     font-family: 'Nanum Brush Script', cursive;
     font-size: 2rem;
     font-weight: 500; 
-    color: rgb(150, 63, 193);
+    color: rgb(40, 44, 52);
     margin-bottom: 0;
+    animation: textFooter 7s ease-in-out infinite;
+    background: linear-gradient(-90deg, rgb(154, 248, 92), rgb(7, 197, 194), rgb(150, 63, 193), rgb(238, 86, 205) );
+    background-size: 300%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@keyframes textFooter {
+    0% { background-position: 0 50% }
+    50% { background-position: 100% 50%}
+    100% { background-position: 0 50%}
 }
 .footer-text{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 .footer-media-container{
     margin: 1rem 0;
@@ -52,6 +62,12 @@
 .icon-mail{
     background-color:rgb(189, 53, 24);
 }
+.icon-github{
+    background-color:black;
+}
+.icon-linkedin{
+    background-color:rgb(14, 118, 168);
+}
 .footer-icon:hover .icon{
     font-size: 34px;
     text-decoration: none;
@@ -65,4 +81,12 @@
 }
 .footer-copyright{
     font-size: 1rem;
+    margin: 0;
+}
+@media screen and (max-width: 576px){
+    .footer-icon{
+        margin: 0 5px;
+        width: 48px;
+        height: 48px;
+    }
 }

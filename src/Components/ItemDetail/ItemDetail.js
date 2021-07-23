@@ -3,8 +3,7 @@ import './ItemDetail.css';
 import { IoIosArrowDroprightCircle, IoIosArrowDropleftCircle } from 'react-icons/io';
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
-import { CartContext } from "../../context/CartContext";
-
+import { CartContext } from '../../context/CartContext';
 
 const ItemDetail = ( { item, count, id } ) => {
     

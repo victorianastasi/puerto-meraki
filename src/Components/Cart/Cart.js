@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import './Cart.css';
 import { ImArrowLeft2, ImArrowRight2 } from 'react-icons/im';
 import { FiShoppingCart } from 'react-icons/fi';
-import { CartContext } from "../../context/CartContext";
-import CartItem from "../CartItem/CartItem"; 
+import { CartContext } from '../../context/CartContext';
+import CartItem from '../CartItem/CartItem'; 
 import { Link } from 'react-router-dom';
 
 const Cart = () => {

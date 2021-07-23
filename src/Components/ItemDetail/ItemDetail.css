@@ -17,6 +17,7 @@
 .item-detail-picture{
     width: 100%;
     display: inline-block;
+    filter: contrast(1.2);
 }
 .item-detail-text{
     width: 40%;
@@ -64,14 +65,14 @@
     left: 0;
 }
 .msg-add-text{
+    text-align: start;
     font-family: 'Amatic SC', cursive;
     font-size: 1.5rem;
     font-weight: 600;
     color: white;
     text-shadow: 5px 5px 10px rgb(26, 27, 29);
-    margin: 0;
-    width: 500px;
-    padding: 1.5rem 0;
+    width: 550px;
+    padding: 1.5rem 0 1.5rem 1rem;
     background-color: rgba(7, 161, 159, 0.7);
 }
 .check-cart{
@@ -92,6 +93,7 @@
     font-size: 1.5rem;
     padding: 0.5rem 1.5rem;
     color: rgb(122, 51, 158);
+    transition: all 200ms;
 }
 .btn-check-cart:hover{
     color: rgb(122, 51, 158);
@@ -117,6 +119,7 @@
         width: 100vw;
     }
     .msg-add-text{
+        text-align: center;
         font-size: 1.4rem;
         font-weight: 600;
         margin: 0 auto;

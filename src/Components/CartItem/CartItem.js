@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import './CartItem.css';
 import { FaTrashAlt } from 'react-icons/fa';
-import { CartContext } from "../../context/CartContext";
+import { CartContext } from '../../context/CartContext';
 
 const CartItem = ({ item, quantity, id }) => {
     const { removeItem } = useContext(CartContext);

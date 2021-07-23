@@ -1,7 +1,7 @@
 import React from 'react';
 import './NavBar.css';
 import logopm from '../../assets/images/logo-pm.png';
-import CartWidget from './CartWidget';
+import CartWidget from '../CartWidget/CartWidget';
 import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
@@ -15,13 +15,13 @@ const NavBar = () => {
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
-                    <NavLink className="nav-item nav-link" activeClassName="selected" to={`/categories/naturaleza`}>
+                    <NavLink className="nav-item nav-link" activeClassName="selected" to={'/categories/naturaleza'}>
                         Naturaleza
                     </NavLink>
-                    <NavLink className="nav-item nav-link" activeClassName="selected" to={`/categories/animales`}>
+                    <NavLink className="nav-item nav-link" activeClassName="selected" to={'/categories/animales'}>
                         Animales
                     </NavLink>
-                    <NavLink className="nav-item nav-link" activeClassName="selected" to={`/categories/musica`}>
+                    <NavLink className="nav-item nav-link" activeClassName="selected" to={'/categories/musica'}>
                         Música
                     </NavLink>
                     <NavLink activeClassName="selected" className="nav-item nav-link" to={'/cart'}>
