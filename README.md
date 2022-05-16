@@ -24,5 +24,7 @@ npm install
 npm start
 
 ### Author
-GitHub: @victorianastasi  
-LinkedIn: https://www.linkedin.com/in/victoria-nastasi-a3452910b/
+GitHub: [victorianastasi](https://github.com/victorianastasi)
+
+LinkedIn: [Victoria Nastasi](https://www.linkedin.com/in/victoria-nastasi-74b007237/)
+
