@@ -18,9 +18,9 @@ const ItemDetail = ( { item, count, id } ) => {
     const checkShop = () => {
         if((isInCart(id) && EndShop) || (isInCart(id) === false && EndShop)){
             return(
-                <div>
-                    <Link className="btn button-detail end-button mt-2 mb-2" to={'/cart'} >VER EL CARRITO <IoIosArrowDroprightCircle size={25}/></Link>
-                    <Link className="btn button-detail continue-button mt-2" to={'/'} ><IoIosArrowDropleftCircle size={25} /> CONTINUAR COMPRANDO</Link>
+                <div className="button-detail-container">
+                    <Link className="btn button-detail continue-button" to={'/'} ><IoIosArrowDropleftCircle size={25} /> CONTINUAR COMPRANDO</Link>
+                    <Link className="btn button-detail end-button" to={'/cart'} >VER EL CARRITO <IoIosArrowDroprightCircle size={25}/></Link>
                     <div className="msg-add">
                         <p className="msg-add-text pb-0 mb-0">Agregaste el producto {item.title} al Carrito de Compras</p> 
                         <p className="msg-add-text pt-0 mt-0">Cantidad: {finalCount} - Precio total: $ {finalCount*item.price}</p>

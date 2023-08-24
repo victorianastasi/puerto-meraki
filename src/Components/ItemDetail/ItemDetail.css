@@ -7,12 +7,12 @@
     font-size: 1rem;
     display: flex;
     flex-flow: row wrap;
+    gap: 1.5rem;
     position: relative;
 }
 .item-detail-img{
     width: 60%;
     display: inline-block;
-    margin: auto;
 }
 .item-detail-picture{
     width: 100%;
@@ -20,16 +20,23 @@
     filter: contrast(1.2);
 }
 .item-detail-text{
-    width: 40%;
+    width: calc(40% - 1.5rem);
     display: inline-block;
-    padding: 0 1.5rem;
+    padding: 0;
     margin: auto 0;
 }
 .item-detail-title{
     font-family: 'Amatic SC', cursive;
     font-size: 2rem;
-    margin: 0.75rem 0rem;
+    margin: 0 0 0.75rem 0;
     color: rgb(7, 197, 194);
+}
+.button-detail-container {
+    padding-top: 1rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .button-detail{
     border: none;
@@ -99,17 +106,26 @@
     color: rgb(122, 51, 158);
     box-shadow: 0px 17px 5px -13px black;
 }
+@media screen and (max-width: 992px){
+    .item-detail{
+        width: 80%;
+        flex-direction: column-reverse;
+        padding: 1rem 2rem;
+        margin: 1rem auto;
+    }
+    .item-detail-text, .item-detail-img {
+        width: 100%;
+    }
+}
 @media screen and (max-width: 576px){
     .item-detail{
         width: 100%;
-        padding: 2rem 1rem;
-        margin: 1rem auto;
+        padding: 1rem;
     }
     .item-detail-img{
         width: 100%;
     }
     .item-detail-text{
-        width: 100%;
         padding: 0;
     }
     .msg-add{
