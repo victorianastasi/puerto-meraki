@@ -1,53 +1,50 @@
-.home{
-    background-color: rgb(40, 44, 52);
-    background-image: url("../../assets/images/home.jpg");
-    height: 570px;
-    background-size: cover;
-    background-repeat: no-repeat;
+.home {
+  background-color: rgb(40, 44, 52);
+  background-image: url("../../assets/images/home.jpg");
+  height: calc(100vh - 66px);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-.home-title{
-    height: 570px;
-    padding: 0;
-    background-image: linear-gradient(to bottom, rgba(25, 26, 27, 0.9), rgba(40, 44, 52, 0));
-    text-align: center;
-    display: flex;
-    flex-flow: row wrap;
-    align-content: center;
-    justify-content: center;
+.home-title {
+  height: 100%;
+  padding: 0;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(25, 26, 27, 0.9),
+    rgba(40, 44, 52, 0)
+  );
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: center;
 }
-.home-title-text{
-    flex-basis: 100%;
-    color: rgb(255, 255, 255);
-    padding-top: 3rem;
-    font-family: 'Amatic SC', cursive;
-    font-size: 5.5rem;
-    text-shadow: 5px 5px 15px rgba(236, 219, 193, 0.9);
+.home-title-text {
+  flex-basis: 100%;
+  color: rgb(255, 255, 255);
+  padding-top: 3rem;
+  font-family: "Amatic SC", cursive;
+  font-size: 5.5rem;
+  text-shadow: 5px 5px 15px rgba(236, 219, 193, 0.9);
 }
-.home-title-container-icon{
-    flex-basis: 100%;
-    margin-top: 6rem;
+.home-title-container-icon {
+  flex-basis: 100%;
+  margin-top: 6rem;
 }
-.home-title-icon{
-    font-size: 120px;
-    animation-duration: 1500ms;
-    color: rgba(255, 255, 255, 0.8);
+.home-title-icon {
+  font-size: 120px;
+  animation-duration: 1500ms;
+  color: rgba(255, 255, 255, 0.8);
 }
-@media screen and (max-width: 576px){
-    .home{
-        height: 490px;
-    }
-    .home-title{
-        height: 490px;
-        align-content: flex-start;
-    }
-    .home-title-text{
-        font-size: 3.3rem;  
-        padding-top: 6rem;
-    }
-    .home-title-container-icon{
-        margin-top: 4rem;
-    }
-    .home-title-icon{
-        font-size: 90px;
-    }
+@media screen and (max-width: 576px) {
+  .home-title-text {
+    font-size: 3.3rem;
+    padding-top: 2rem;
+  }
+  .home-title-container-icon {
+    margin-top: 4rem;
+  }
+  .home-title-icon {
+    font-size: 90px;
+  }
 }
