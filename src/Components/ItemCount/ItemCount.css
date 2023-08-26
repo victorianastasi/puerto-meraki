@@ -18,6 +18,7 @@
     align-items: center;
     gap: 0.75rem;
     margin: 0 auto;
+    position: relative;
 }
 .counter-button{
     display: inline-block;
@@ -79,17 +80,35 @@
 }
 .alert-count{
     position: absolute;
-    bottom: 24px;
+    bottom: -90px;
     left: 50%;
-    padding: 0.5rem 3rem 0.5rem 0.75rem;
+    padding: 0.75rem 3rem 0.75rem 0.75rem;
     margin: 0;
     transform: translate(-50%, 0);
-    width: fit-content;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+.alert-count .close{
+    padding: 0 0.5rem 0 0;
+}
+.alert-count .close span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+.alert-count .close span:focus-visible, .alert-count .close:focus-visible, .alert-count .close:focus {
+    outline: none;
 }
 @media screen and (max-width: 576px){
     .alert-count{
-        right: 12px;
-        padding: 0.5rem 0;
-        margin: 0.5rem 0 0.25rem 0;
+        width: 100%;
+        max-width: 300px;
+    }
+}
+@media screen and (max-width: 300px){
+    .alert-count{
+        bottom: -110px;
     }
 }

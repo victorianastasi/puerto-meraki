@@ -14,10 +14,13 @@
     width: 60%;
     display: inline-block;
 }
+
 .item-detail-picture{
     width: 100%;
     display: inline-block;
     filter: contrast(1.2);
+    border-radius: 0.5rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 }
 .item-detail-text{
     width: calc(40% - 1.5rem);

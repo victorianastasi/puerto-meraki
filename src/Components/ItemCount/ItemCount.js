@@ -19,6 +19,9 @@ const ItemCount = ({ initial, stock, onAdd, price }) => {
   const removeAlert = (e) => {
     setAlertCount(false)
   };
+  const removeAlertStock = (e) => {
+    setAlertStock(false)
+  };
 
   const addItemCount = (e) => {
     e.preventDefault();
@@ -72,14 +75,6 @@ const ItemCount = ({ initial, stock, onAdd, price }) => {
             >
               <IoIosAdd className="counter-button-icon" />
             </button>
-          </div>
-          <p className="stock">Stock disponible: {updateStock}</p>
-          <button
-            className="btn btn-dark mt-2 mb-3"
-            onClick={() => onAdd(count)}
-          >
-            Agregar al carrito
-          </button>
             {alertCount && (
             <div className="alert alert-danger alert-count alert-dismissible fade show">
                 <RiErrorWarningFill size={30} /> La cantidad no puede ser menor a 1
@@ -89,10 +84,23 @@ const ItemCount = ({ initial, stock, onAdd, price }) => {
             </div>
             )}
             {alertStock && (
-            <div className="alert alert-danger alert-count">
+            <div className="alert alert-danger alert-count alert-dismissible fade show">
                 <RiErrorWarningFill size={30} /> No se pueden agregar más unidades
+                <button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={() => removeAlertStock()}>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             )}
+
+          </div>
+          <p className="stock">Stock disponible: {updateStock}</p>
+          <button
+            className="btn btn-dark mt-2 mb-3"
+            onClick={() => onAdd(count)}
+          >
+            Agregar al carrito
+          </button>
+            
         </div>
       </div>
     );
