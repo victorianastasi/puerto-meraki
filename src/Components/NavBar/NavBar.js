@@ -59,7 +59,7 @@ const NavBar = () => {
           </NavLink>
           <NavLink
             activeClassName="selected"
-            className="nav-item nav-link"
+            className="nav-item nav-link nav-item-cart"
             to={"/cart"}
             onClick={navbarCollapsed}
           >

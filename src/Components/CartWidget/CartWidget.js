@@ -15,7 +15,7 @@ const CartWidget = () => {
     return (
         <div>
             <MdShoppingCart size={30}/>
-            {quantityWidgetItems !== 0 && <span className="quantity-widget">∙ {quantityWidgetItems} ∙</span>}
+            {quantityWidgetItems !== 0 && <span className="quantity-widget">{quantityWidgetItems}</span>}
         </div>
     );  
 };

@@ -38,10 +38,14 @@ a.selected {
 .navbar-toggler.collapsed {
   outline: none;
 }
-.nav-item {
+.navbar-nav .nav-item {
   width: 100%;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   text-align: right;
+  padding-right: 1rem;
+}
+.nav-item-cart {
+  position: relative;
 }
 @media screen and (min-width: 992px) {
   .navbar-expand-lg .navbar-collapse {
@@ -54,7 +58,7 @@ a.selected {
     width: 140px;
     padding: 0.2rem 1rem;
   }
-  .nav-item {
+  .navbar-nav .nav-item {
     width: unset;
     border-top: none;
     text-align: center;

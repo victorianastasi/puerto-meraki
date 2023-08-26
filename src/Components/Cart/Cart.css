@@ -7,7 +7,7 @@
 .cart-empty{
     background-image: url("../../assets/images/empty-cart.jpg");
     background-size: cover;
-    height: 450px;
+    height: 68vh;
 }
 .cart-empty-text{
     font-family: 'Amatic SC', cursive;
