@@ -1,216 +1,220 @@
-.checkout-container{
-    position: relative;
+.checkout-container {
+  position: relative;
 }
-.back-to-shop{
-    box-shadow: 5px 5px 10px black;
-    border: none;
-    font-family: 'Amatic SC', cursive;
-    font-size: 1.6rem;
-    font-weight: 600;
-    position: absolute;
-    top: 10px;
-    left: 0px;
-    border-radius: 20px;
-    background-color: rgba(150, 63, 193, 0.7);
+.back-to-shop {
+  box-shadow: 5px 5px 10px black;
+  border: none;
+  font-family: "Amatic SC", cursive;
+  font-size: 1.6rem;
+  font-weight: 600;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  border-radius: 20px;
+  background-color: rgba(150, 63, 193, 0.7);
 }
-.back-to-shop:hover{
-    color: rgb(150, 63, 193);
-    background-color: rgb(255, 255, 255, 1);
+.back-to-shop:hover {
+  color: rgb(150, 63, 193);
+  background-color: rgb(255, 255, 255, 1);
 }
-.checkout-title{
-    font-family: 'Amatic SC', cursive;
-    font-size: 3.5rem;
-    text-shadow: 5px 5px 10px rgba(199, 154, 213, 0.5);
-    padding: 4rem 0 2rem 0;
+.checkout-title {
+  font-family: "Amatic SC", cursive;
+  font-size: 3.5rem;
+  text-shadow: 5px 5px 10px rgba(199, 154, 213, 0.5);
+  padding: 4rem 0 2rem 0;
 }
-.checkout-empty{
-    background-image: url("../../assets/images/empty-cart.jpg");
-    background-size: cover;
-    height: 550px;
+.checkout-empty {
+  background-image: url("../../assets/images/empty-cart.jpg");
+  background-size: cover;
+  height: 550px;
 }
-.checkout-empty-text{
-    font-family: 'Amatic SC', cursive;
-    font-size: 2.5rem;
-    color: rgb(40, 44, 52);
-    padding-top: 8rem;
+.checkout-empty-text {
+  font-family: "Amatic SC", cursive;
+  font-size: 2.5rem;
+  color: rgb(40, 44, 52);
+  padding-top: 8rem;
 }
-.checkout-empty-button{
-    font-family: 'Amatic SC', cursive;
+.checkout-empty-button {
+  font-family: "Amatic SC", cursive;
+  font-size: 2rem;
+  background-color: rgba(40, 44, 52, 0.8);
+  border: none;
+  padding: 0.5rem 2rem;
+}
+.checkout-form {
+  width: 50%;
+  margin: 0 auto;
+}
+.form-title {
+  font-family: "Amatic SC", cursive;
+  font-size: 2.5rem;
+  padding: 0.75rem 0rem;
+  color: rgb(65, 235, 206);
+  font-weight: 800;
+}
+.check-title {
+  margin-top: 1rem;
+}
+.row-items-checkout {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  margin: 0 auto;
+}
+.row-items-checkout p {
+  margin: 0;
+  padding: 10px 0;
+}
+.checkout-header {
+  background-color: rgba(255, 255, 255, 0.3);
+  font-family: "Amatic SC", cursive;
+  font-size: 1.7rem;
+}
+.row-items-checkout-title {
+  flex-basis: 40%;
+}
+.row-items-checkout-price,
+.row-items-checkout-quantity,
+.row-items-checkout-subtotal {
+  flex-basis: 20%;
+}
+.item-title-img {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.row-item-data-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.checkout-data {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.checkout-total {
+  font-size: 2.2rem;
+  color: rgb(236, 219, 193);
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+.final-shop {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.btn-form {
+  text-align: center;
+  font-family: "Amatic SC", cursive;
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin: 0;
+  width: 280px;
+}
+.body-checkout {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.success-shop {
+  border: 2px solid rgb(236, 219, 193);
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgb(236, 219, 193);
+  width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  background-color: rgb(33, 36, 43);
+}
+.success-shop-text {
+  font-family: "Amatic SC", cursive;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+.load-end {
+  margin: 2.5rem auto 0 auto;
+  height: 250px;
+}
+.alert-data {
+  width: 40%;
+  margin: 1.5rem auto 0.5rem auto;
+}
+.alert-data-text {
+  font-family: "Amatic SC", cursive;
+  font-size: 1.8rem;
+}
+.alert-data-text-fields {
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+}
+@media screen and (max-width: 576px) {
+  .checkout-title {
+    font-size: 3rem;
+    padding: 4rem 0 0rem 0;
+  }
+  .checkout-empty {
+    height: 500px;
+  }
+  .checkout-empty-text {
     font-size: 2rem;
-    background-color: rgba(40, 44, 52, 0.8);
-    border: none;
-    padding: 0.5rem 2rem;
-}
-.checkout-form{
-    width: 50%;
-    margin: 0 auto;
-}
-.form-title{
-    font-family: 'Amatic SC', cursive;
-    font-size: 2.5rem;
-    padding: 0.75rem 0rem;
-    color: rgb(65, 235, 206);
-    font-weight: 800;
-}
-.check-title{
-    margin-top: 1rem;
-}
-.row-items-checkout{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    width: 85%;
-    margin: 0 auto;
-}
-.row-items-checkout p{
-    margin: 0;
-    padding: 10px 0;
-}
-.checkout-header{
-    background-color: rgba(255,255,255,0.3);
-    font-family: 'Amatic SC', cursive;
-    font-size: 1.7rem;
-}
-.row-items-checkout-title{
-    flex-basis: 40%;
-}
-.row-items-checkout-price, .row-items-checkout-quantity, .row-items-checkout-subtotal{
-    flex-basis: 20%;
-}
-.item-title-img{
-    text-align: start;
-    padding-left: 20px;
-}
-.row-item-data-img{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-right: 15px;
-}
-.checkout-data{
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
-}
-.checkout-total{
-    font-size: 2.2rem;
-    color: rgb(236, 219, 193);
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 10px 0;
-    margin-bottom: 20px;
-}
-.final-shop{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.btn-form{
-    text-align: center;
-    font-family: 'Amatic SC', cursive;
-    font-size: 1.7rem;
-    font-weight: 600;
-    margin: 0;
-    width: 280px;
-    font-weight: 600;
-}
-.body-checkout{
     padding-top: 4rem;
-    padding-bottom: 4rem;
-}
-.success-shop{
-    border: 2px solid rgb(236, 219, 193);
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgb(236, 219, 193);
-    width: 600px;
+  }
+  .back-to-shop {
+    font-size: 1.3rem;
+    background-color: rgba(175, 132, 197, 0.7);
+  }
+  .checkout-form {
+    width: 100%;
     margin: 0 auto;
-    padding: 1.5rem 1rem;
-    background-color: rgb(33, 36, 43);
-}
-.success-shop-text{
-    font-family: 'Amatic SC', cursive;
-    font-size: 2.2rem;
-    font-weight: 600;
-}
-.load-end{
-    margin: 2.5rem auto 0 auto;
-    height:250px;
-}
-.alert-data{
-    width: 40%;
-    margin: 1.5rem auto 0.5rem auto;
-}
-.alert-data-text{
-    font-family: 'Amatic SC', cursive;
+  }
+  .form-title {
+    font-size: 2rem;
+  }
+  .check-title {
+    margin-top: 0;
+    font-size: 2.3rem;
+  }
+  .row-items-checkout {
+    width: 100%;
+  }
+  .checkout-header {
+    font-size: 1.4rem;
+  }
+  .item-title-img {
+    gap: 0.5rem;
+  }
+  .row-item-data-img {
+    display: block;
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+  }
+  .body-checkout {
+    padding-top: 2rem;
+  }
+  .checkout-total {
+    font-size: 1.9rem;
+  }
+  .btn-form {
+    max-width: 250px;
+    width: 100%;
+    margin: 0.75rem 0;
+  }
+  .success-shop {
+    max-width: 300px;
+    width: 100%;
+  }
+  .success-shop-text {
     font-size: 1.8rem;
-}
-.alert-data-text-fields{
-    font-weight: 700;
-    font-family: "Nunito", sans-serif;
-}
-@media screen and (max-width: 576px){
-    .checkout-title{
-        font-size: 3rem;
-        padding: 4rem 0 0rem 0;
-    }
-    .checkout-empty{
-        height: 500px;
-    }
-    .checkout-empty-text{
-        font-size: 2rem;
-        padding-top: 4rem;
-    }
-    .back-to-shop{
-        font-size: 1.3rem;
-        background-color: rgba(175, 132, 197, 0.7);
-    }
-    .checkout-form{
-        width: 100%;
-        margin: 0 auto;
-    }
-    .form-title{
-        font-size: 2rem;
-    }
-    .check-title{
-        margin-top: 0;
-        font-size: 2.3rem;
-    }
-    .row-items-checkout{
-        width: 100%;
-    }
-    .checkout-header{
-        font-size: 1.4rem;
-    }
-    .item-title-img{
-        text-align: center;
-        padding-left: 0px;
-    }
-    .row-item-data-img{
-        display: block;
-        width: 75px;
-        height: 75px;
-        margin: 0 auto;
-    }
-    .body-checkout{
-        padding-top: 2rem;
-    }
-    .checkout-total{
-        font-size: 1.9rem;
-    }
-    .btn-form{
-        width: 250px;
-        margin: 0.75rem 0;
-    }
-    .success-shop{
-        width: 300px;
-    }
-    .success-shop-text{
-        font-size: 1.8rem;
-    }
-    .alert-data{
-        width: 100%;
-    }
-    .alert-data-text{
-        font-size: 1.7rem;
-    }
+  }
+  .alert-data {
+    width: 100%;
+  }
+  .alert-data-text {
+    font-size: 1.7rem;
+  }
 }

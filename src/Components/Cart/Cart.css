@@ -1,57 +1,55 @@
-.cart-title{
-    font-family: 'Amatic SC', cursive;
-    font-size: 3.5rem;
-    text-shadow: 5px 5px 10px rgba(199, 154, 213, 0.5);
-    padding: 2rem 0;
+.cart-title {
+  font-family: "Amatic SC", cursive;
+  font-size: 3.5rem;
+  text-shadow: 5px 5px 10px rgba(199, 154, 213, 0.5);
+  padding: 2rem 0;
 }
-.cart-empty{
-    background-image: url("../../assets/images/empty-cart.jpg");
-    background-size: cover;
-    height: 68vh;
+.cart-empty {
+  background-image: url("../../assets/images/empty-cart.jpg");
+  background-size: cover;
+  height: 68vh;
 }
-.cart-empty-text{
-    font-family: 'Amatic SC', cursive;
-    font-size: 2.5rem;
-    color: rgb(40, 44, 52);
-    padding-top: 2rem;
+.cart-empty-text {
+  font-family: "Amatic SC", cursive;
+  font-size: 2.5rem;
+  color: rgb(40, 44, 52);
+  padding-top: 2rem;
 }
-.cart-empty-button{
-    font-family: 'Amatic SC', cursive;
+.cart-empty-button {
+  font-family: "Amatic SC", cursive;
+  font-size: 2rem;
+  background-color: rgba(40, 44, 52, 0.8);
+  border: none;
+  padding: 0.5rem 2rem;
+}
+.cart-total {
+  font-family: "Amatic SC", cursive;
+  font-size: 2.5rem;
+  color: rgb(7, 197, 194);
+  font-weight: 600;
+}
+.buttons-shop {
+  font-family: "Amatic SC", cursive;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  margin: 0;
+}
+.btn-shop {
+  font-size: 1.7rem;
+  font-weight: 600;
+  width: 250px;
+  font-weight: 600;
+}
+@media screen and (max-width: 576px) {
+  .btn-shop {
+    font-size: 1.6rem;
+  }
+  .cart-title {
+    font-size: 2.8rem;
+    padding: 2rem 0 1rem 0;
+  }
+  .cart-empty-text {
     font-size: 2rem;
-    background-color: rgba(40, 44, 52, 0.8);
-    border: none;
-    padding: 0.5rem 2rem;
-}
-.cart-total{
-    font-family: 'Amatic SC', cursive;
-    font-size: 2.5rem;
-    color: rgb(7,197,194);
-    font-weight: 600;
-}
-.buttons-shop{
-    font-family: 'Amatic SC', cursive;
-    justify-content: center;
-}
-.btn-shop{
-    font-size: 1.7rem;
-    font-weight: 600;
-    margin: 0 1rem;
-    width: 250px;
-    font-weight: 600;
-}
-@media screen and (max-width: 576px){
-    .btn-shop{
-        font-size: 1.6rem;
-        font-weight: 600;
-        margin: 0.5rem 1rem;
-        width: 250px;
-        font-weight: 600;
-    }
-    .cart-title{
-        font-size: 2.8rem;
-        padding: 2rem 0 1rem 0;
-    }
-    .cart-empty-text{
-        font-size: 2rem;
-    }
+  }
 }
