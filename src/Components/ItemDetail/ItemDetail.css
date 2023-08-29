@@ -1,149 +1,170 @@
-.item-detail{
-    width: 80%;
-    background-color: rgb(245, 245, 245);
-    margin: 1rem auto 2.5rem auto;
-    padding: 1.5rem 1rem 2.5rem 1rem;
-    color: rgb(40, 44, 52);
-    font-size: 1rem;
-    display: flex;
-    flex-flow: row wrap;
-    gap: 1.5rem;
-    position: relative;
-}
-.item-detail-img{
-    width: 60%;
-    display: inline-block;
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  10%,
+  90% {
+    opacity: 1;
+  }
 }
 
-.item-detail-picture{
-    width: 100%;
-    display: inline-block;
-    filter: contrast(1.2);
-    border-radius: 0.5rem;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+.item-detail {
+  width: 80%;
+  background-color: rgb(245, 245, 245);
+  margin: 1rem auto 2.5rem auto;
+  padding: 1.5rem 1rem 2.5rem 1rem;
+  color: rgb(40, 44, 52);
+  font-size: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1.5rem;
+  position: relative;
 }
-.item-detail-text{
-    width: calc(40% - 1.5rem);
-    display: inline-block;
-    padding: 0;
-    margin: auto 0;
+.item-detail-img {
+  width: 60%;
+  display: inline-block;
 }
-.item-detail-title{
-    font-family: 'Amatic SC', cursive;
-    font-size: 2rem;
-    margin: 0 0 0.75rem 0;
-    color: rgb(7, 197, 194);
+
+.item-detail-picture {
+  width: 100%;
+  display: inline-block;
+  filter: contrast(1.2);
+  border-radius: 0.5rem;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+.item-detail-text {
+  width: calc(40% - 1.5rem);
+  display: inline-block;
+  padding: 0;
+  margin: auto 0;
+}
+.item-detail-title {
+  font-family: "Amatic SC", cursive;
+  font-size: 2rem;
+  margin: 0 0 0.75rem 0;
+  color: rgb(7, 197, 194);
 }
 .button-detail-container {
-    padding-top: 1rem;
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    justify-content: center;
+  padding-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.button-detail{
-    border: none;
-    font-family: 'Amatic SC', cursive;
-    font-size: 1.6rem;
-    font-weight: 600;
+.button-detail {
+  border: none;
+  font-family: "Amatic SC", cursive;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
-.end-button{
-    background-color: rgb(40, 44, 52);
-    color: rgb(236, 219, 193);
+.end-button {
+  background-color: rgb(40, 44, 52);
+  color: rgb(236, 219, 193);
 }
-.end-button:hover{
-    background-color: rgb(30, 33, 39);
-    color: rgb(236, 219, 193);
-    box-shadow: 0 0.5rem 0.5rem -0.4rem rgb(40, 44, 52);
-    transform: translateY(-0.25rem);
-    transition: all 200ms;
+.end-button:hover {
+  background-color: rgb(30, 33, 39);
+  color: rgb(236, 219, 193);
+  box-shadow: 0 0.5rem 0.5rem -0.4rem rgb(40, 44, 52);
+  transform: translateY(-0.25rem);
+  transition: all 200ms;
 }
-.continue-button{
-    background-color: rgb(98, 107, 165);
-    color: white;
+.continue-button {
+  background-color: rgb(98, 107, 165);
+  color: white;
 }
-.continue-button:hover{
-    background-color: rgb(79, 87, 138);
-    color: white;
-    box-shadow: 0 0.5rem 0.5rem -0.4rem rgb(98, 107, 165);
-    transform: translateY(-0.25rem);
-    transition: all 200ms;
+.continue-button:hover {
+  background-color: rgb(79, 87, 138);
+  color: white;
+  box-shadow: 0 0.5rem 0.5rem -0.4rem rgb(98, 107, 165);
+  transform: translateY(-0.25rem);
+  transition: all 200ms;
 }
-.msg-add{
+.msg-add {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(7, 161, 159, 0.8);
+  width: 550px;
+  padding: 1.5rem 1rem;
+}
+.msg-transition {
+  animation: fade 6s linear;
+}
+.msg-add-text {
+  text-align: start;
+  font-family: "Amatic SC", cursive;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  text-shadow: 5px 5px 10px rgb(26, 27, 29);
+  margin: 0;
+}
+.check-cart {
+  background-image: linear-gradient(
+    to right,
+    rgb(119, 4, 200),
+    rgb(125, 65, 155)
+  );
+  margin: 1rem auto 0 auto;
+  padding: 1rem;
+  border-radius: 5px;
+  font-family: "Amatic SC", cursive;
+  font-weight: 700;
+}
+.check-cart-text {
+  margin: 0;
+  font-size: 1.3rem;
+  color: white;
+}
+.btn-check-cart {
+  background-color: white;
+  font-size: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  color: rgb(122, 51, 158);
+  transition: all 200ms;
+}
+.btn-check-cart:hover {
+  color: rgb(122, 51, 158);
+  box-shadow: 0px 17px 5px -13px black;
+}
+@media screen and (max-width: 992px) {
+  .item-detail {
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin: 1rem auto;
+  }
+  .item-detail-text {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .item-detail-img {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .item-detail {
+    width: 100%;
+    padding: 1rem;
+  }
+  .item-detail-img {
+    width: 100%;
+  }
+  .item-detail-text {
+    padding: 0;
+  }
+  .msg-add {
     position: fixed;
     bottom: 0;
     left: 0;
-}
-.msg-add-text{
-    text-align: start;
-    font-family: 'Amatic SC', cursive;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: white;
-    text-shadow: 5px 5px 10px rgb(26, 27, 29);
-    width: 550px;
-    padding: 1.5rem 0 1.5rem 1rem;
-    background-color: rgba(7, 161, 159, 0.7);
-}
-.check-cart{
-    background-image: linear-gradient(to right, rgb(119,4,200), rgb(125, 65, 155));
-    margin: 1rem auto 0 auto;
+    width: 100%;
     padding: 1rem;
-    border-radius: 5px;
-    font-family: 'Amatic SC', cursive;
-    font-weight: 700;
-}
-.check-cart-text{
-    margin: 0;
-    font-size: 1.3rem;
-    color: white;
-}
-.btn-check-cart{
-    background-color: white;
-    font-size: 1.5rem;
-    padding: 0.5rem 1.5rem;
-    color: rgb(122, 51, 158);
-    transition: all 200ms;
-}
-.btn-check-cart:hover{
-    color: rgb(122, 51, 158);
-    box-shadow: 0px 17px 5px -13px black;
-}
-@media screen and (max-width: 992px){
-    .item-detail{
-        width: 80%;
-        flex-direction: column-reverse;
-        padding: 1rem 2rem;
-        margin: 1rem auto;
-    }
-    .item-detail-text, .item-detail-img {
-        width: 100%;
-    }
-}
-@media screen and (max-width: 576px){
-    .item-detail{
-        width: 100%;
-        padding: 1rem;
-    }
-    .item-detail-img{
-        width: 100%;
-    }
-    .item-detail-text{
-        padding: 0;
-    }
-    .msg-add{
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100vw;
-    }
-    .msg-add-text{
-        text-align: center;
-        font-size: 1.4rem;
-        font-weight: 600;
-        margin: 0 auto;
-        width: 300px;
-        padding: 0.5rem 1rem;
-        background-color: rgba(7, 161, 159, 0.9);
-    }
+  }
+  .msg-add-text {
+    text-align: center;
+    font-size: 1.4rem;
+  }
 }
